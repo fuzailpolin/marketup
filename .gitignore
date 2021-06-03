@@ -1,4 +1,7 @@
 /admin/node_modules/
+/admin/node_modules/*
 /main/node_modules/
+/main/node_modules/*
 /main/yarn-error.log
 /admin/yarn-error.log
+.idea
