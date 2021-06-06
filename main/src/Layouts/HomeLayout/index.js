@@ -1,11 +1,15 @@
-const HomeLayout = ({children}) => {
-    return (
-        <>
-            {
-                children
-            }
-        </>
-    )
-}
+import Footer from "./Footer";
+import Header from "./Header";
 
-export default HomeLayout
+const HomeLayout = ({ children }) => {
+  return (
+    <>
+      <Header />
+      {children}
+
+      <Footer />
+    </>
+  );
+};
+
+export default HomeLayout;

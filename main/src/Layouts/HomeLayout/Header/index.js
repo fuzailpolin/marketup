@@ -1,9 +1,7 @@
-const Header = () => {
-    return (
-        <section>
-            <div className="grid grid-cols-4">
+import React from "react";
 
-            </div>
-        </section>
-    )
-}
+const Header = () => {
+  return <section>Hello from Header</section>;
+};
+
+export default Header;
