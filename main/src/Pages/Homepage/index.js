@@ -1,6 +1,10 @@
+import SubAboutUsSection from "./SubAboutUsSection";
+import SubChooseSection from "./SubChooseSection";
 const Homepage = () => (
-    'hello'
-)
+  <div>
+    <SubAboutUsSection />
+    <SubChooseSection />
+  </div>
+);
 
-
-export default Homepage
+export default Homepage;

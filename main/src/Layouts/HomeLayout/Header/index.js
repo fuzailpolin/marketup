@@ -27,7 +27,7 @@ const HeaderComponent = () => {
                         <FaAlignRight onClick={() => setOpen(!open)}
                                       className={'text-gray-600 inline-block md:hidden mr-5'} size={24}/>
                         <div
-                            className={`fixed w-2/3 transition-all -top-0 duration-500 bg-white h-screen ${open ? '-left-0' : '-left-full'}`}>
+                            className={`fixed z-30 w-2/3 transition-all -top-0 duration-500 bg-white h-screen ${open ? '-left-0' : '-left-full'}`}>
                             <div className={'pl-4'}>
                                 <Link to={'/'}>
                                     <img src={logo} className={'w-16'} alt="logo"/>
@@ -40,7 +40,7 @@ const HeaderComponent = () => {
                         </div>
 
                         <div onClick={() => setOpen(false)}
-                             className={`fixed w-1/3 transition-all -top-0 duration-150 bg-black bg-opacity-20 h-screen ${open ? '-right-0' : 'right-full'}`}>
+                             className={`z-10 fixed w-full transition-all -top-0 duration-150 bg-black bg-opacity-20 h-screen ${open ? '-right-0 opacity-100' : 'right-full opacity-0'}`}>
 
                         </div>
                     </nav>
