@@ -1,0 +1,15 @@
+.desktop-nav{
+    @apply md:flex mr-10 hidden;
+}
+
+.desktop-nav li{
+    @apply text-base font-medium text-gray-600 mx-8;
+}
+
+.mobile-nav{
+    @apply pt-2 list-disc font-poppins pl-8 md:hidden;
+}
+
+.mobile-nav li{
+    @apply ml-2 my-3 text-xl font-medium text-gray-600;
+}
