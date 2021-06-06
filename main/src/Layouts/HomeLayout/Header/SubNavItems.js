@@ -3,31 +3,31 @@ import {NavLink} from "react-router-dom";
 const SubNavItems = () => (
     <>
         <li>
-            <NavLink to={'/'}>Home</NavLink>
+            <NavLink exact activeClassName={'font-bold text-gray-700'} to={'/'}>Home</NavLink>
         </li>
 
         <li>
-            <NavLink to={'/'}>About</NavLink>
+            <NavLink exact activeClassName={'font-bold text-gray-700'} to={'/about'}>About</NavLink>
         </li>
 
         <li>
-            <NavLink to={'/'}>Service</NavLink>
+            <NavLink exact activeClassName={'font-bold text-gray-700'} to={'/service'}>Service</NavLink>
         </li>
 
         <li>
-            <NavLink to={'/'}>Work</NavLink>
+            <NavLink exact activeClassName={'font-bold text-gray-700'} to={'/work'}>Work</NavLink>
         </li>
 
         <li>
-            <NavLink to={'/'}>Client</NavLink>
+            <NavLink exact activeClassName={'font-bold text-gray-700'} to={'/client'}>Client</NavLink>
         </li>
 
         <li>
-            <NavLink to={'/'}>Our Team</NavLink>
+            <NavLink exact activeClassName={'font-bold text-gray-700'} to={'/team'}>Our Team</NavLink>
         </li>
 
         <li>
-            <NavLink to={'/'}>Contact</NavLink>
+            <NavLink exact activeClassName={'font-bold text-gray-700'} to={'/contact'}>Contact</NavLink>
         </li>
 
     </>
