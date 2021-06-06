@@ -37,7 +37,7 @@ const HeaderComponent = () => {
                         </div>
 
                         <div onClick={() => setOpen(false)}
-                            className={`fixed w-1/3 transition-all -top-0 duration-300 bg-black bg-opacity-20 h-screen ${open ? '-right-0': 'right-full'}`}>
+                            className={`fixed w-1/3 transition-all -top-0 duration-150 bg-black bg-opacity-20 h-screen ${open ? '-right-0': 'right-full'}`}>
 
                         </div>
                     </nav>
