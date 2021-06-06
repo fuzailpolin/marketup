@@ -7,6 +7,7 @@ import logo from '../../../Assets/Images/logo.gif'
 
 import './header.css'
 
+
 const HeaderComponent = () => {
     const [open, setOpen] = useState(false)
 
