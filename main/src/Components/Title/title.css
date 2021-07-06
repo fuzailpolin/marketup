@@ -1,7 +1,0 @@
-.section-title {
-  @apply text-center text-xl mt-10 font-semibold;
-}
-
-.section-title-highlight {
-  @apply text-highlight border-b-2 ml-2;
-}

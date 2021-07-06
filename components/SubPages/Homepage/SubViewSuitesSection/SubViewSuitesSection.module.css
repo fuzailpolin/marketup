@@ -1,0 +1,84 @@
+.SubViewSuites-wrapper {
+  background: rgb(63, 165, 190);
+  @apply grid grid-cols-1 md:grid-cols-2 relative md:mx-20 mx-5 -mt-40;
+}
+
+.SubViewSuites-content-wrapper {
+  background-image: url('/Images/overlay_logo.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  @apply col-span-1 px-5 lg:px-14 md:pt-32 pt-10;
+}
+
+.SubViewSuites-content-text {
+  @apply text-white md:text-xl;
+  line-height: 2;
+}
+
+.SubViewSuites-content-button {
+  @apply text-white border-2 border-gray-500 p-4 text-sm lg:text-lg w-full md:w-70 uppercase mt-5 focus:outline-none hover:border-white mb-2;
+}
+
+.SubViewSuites-form-wrapper {
+  @apply col-span-1 px-5 py-5 md:py-10 relative;
+}
+
+.SubViewSuites-form-title {
+  @apply text-white text-2xl lg:text-3xl pb-3 font-primary;
+}
+
+.SubViewSuites-form-datePicker-wrapper {
+  @apply flex flex-col md:flex-row md:space-x-3;
+}
+
+.SubViewSuites-form-datePicker-checkin {
+  @apply h-16 border-2 rounded-md bg-white text-gray-400 pt-1 pl-2 md:w-1/2 cursor-pointer;
+}
+
+.SubViewSuites-form-datePicker-checkin-input {
+  @apply text-gray-600 focus:outline-none w-full bg-transparent cursor-pointer;
+}
+
+.SubViewSuites-form-datePicker-checkout {
+  @apply h-16 rounded-md col-span-2 border-2 bg-white text-gray-400 pt-1 pl-2 mt-3 md:mt-0 md:w-1/2 cursor-pointer;
+}
+
+.SubViewSuites-form-datePicker-checkout-input {
+  @apply text-gray-600 focus:outline-none w-full cursor-pointer;
+}
+
+.SubViewSuites-form-select {
+  @apply bg-white text-gray-400 rounded-md mt-3 relative;
+}
+
+.SubViewSuites-form-select-label {
+  @apply absolute left-3 top-2;
+}
+
+.SubViewSuites-form-calendar {
+  @apply absolute md:top-40 top-52 lg:left-8;
+}
+
+.SubViewSuites-form-check-btn {
+  @apply   w-full rounded-md mt-3 h-16 sm:text-xl font-primary uppercase focus:outline-none border-none hover:bg-grey hover:text-white;
+}
+
+.SubViewSuites-form-check-btn-icon {
+  @apply inline-block ml-3 text-xl sm:text-3xl;
+}
+
+.SubViewSuites-form-calendarClass {
+  @apply absolute top-52 md:top-40 md:left-8;
+}
+
+@media screen and (width:768px){
+.SubViewSuites-form-calendarClass{
+    @apply top-44 left-4
+}
+}
+
+
+
+
+

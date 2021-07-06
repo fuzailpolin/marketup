@@ -5,3 +5,6 @@
 /main/yarn-error.log
 /admin/yarn-error.log
 .idea
+/node_modules/
+/.next/
+/yarn.lock
