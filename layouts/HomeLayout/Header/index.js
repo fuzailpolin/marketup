@@ -25,7 +25,7 @@ const Header = () => {
                 <SubNavItems/>
               </ul>
               <FaAlignRight onClick={() => setOpen(!open)}
-                            className={'text-gray-600 inline-block md:hidden mr-5'} size={24}/>
+                            className={'text-gray-600 inline-block lg:hidden mr-5'} size={24}/>
               <div
                   className={`fixed z-30 w-2/3 transition-all -top-0 duration-500 bg-white h-screen ${open ? '-left-0' : '-left-full'}`}>
                 <div className={'pl-4'}>
