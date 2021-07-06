@@ -1,5 +1,5 @@
 .desktop-nav{
-    @apply md:flex mr-10 hidden;
+    @apply lg:flex mr-10 hidden;
 }
 
 .desktop-nav li{
@@ -7,7 +7,7 @@
 }
 
 .mobile-nav{
-    @apply pt-2 list-disc font-poppins pl-8 md:hidden;
+    @apply pt-2 list-disc font-poppins pl-8 lg:hidden;
 }
 
 .mobile-nav li{
