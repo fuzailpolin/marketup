@@ -1,0 +1,28 @@
+.div1 {
+    transition: all 0.5s ease-in-out;
+}
+
+.overlay{
+    background: rgba(0,0,0,0.3);
+    @apply w-full h-full opacity-0 duration-500;
+}
+
+.overlay > *{
+    transform: translateY(80px);
+    @apply duration-500;
+}
+
+.overlay:hover > *{
+    transform: translateY(0);
+}
+
+.overlay:hover{
+   @apply opacity-100;
+}
+
+.div1:hover{
+    
+    width:200%;
+    
+}
+
