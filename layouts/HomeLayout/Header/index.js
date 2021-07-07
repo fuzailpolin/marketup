@@ -14,8 +14,8 @@ const Header = () => {
 
 
   return (
-      <header>
-        <div className="grid grid-cols-4 shadow-md">
+      <header className={'shadow bg-white z-50 border-b-2 border-gray-300 sticky -top-0 -left-0'}>
+        <div className="grid grid-cols-4">
           <div className={'pl-2 md:pl-5'}>
             <Link href={'/'}><img src={'/Images/logo.gif'} className={'w-16'} alt="Logo"/></Link>
           </div>

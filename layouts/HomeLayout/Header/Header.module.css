@@ -3,7 +3,7 @@
 }
 
 .desktop-nav li{
-    @apply text-base font-medium font-poppins text-gray-600 mx-8;
+    @apply text-base font-medium font-poppins text-gray-600 mx-6;
 }
 
 .mobile-nav{
