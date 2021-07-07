@@ -1,0 +1,18 @@
+.button-container {
+  z-index: 10;
+  position: absolute;
+  display: none;
+}
+.image {
+  position: relative;
+  height: 40vh;
+  width: 100%;
+  z-index: 0;
+}
+
+.main:hover .button-container {
+  display: block;
+}
+.main:hover .image {
+  opacity: 0.4;
+}
