@@ -22,12 +22,12 @@ module.exports = {
         '70vh': '70vh',
         '25vh': '25vh'
       }
-
     },
   },
   variants: {
     extend: {
       margin: ["even"],
+      transitionProperty: ['hover']
     },
   },
   plugins: [],

@@ -1,0 +1,26 @@
+const RebrandingIcon = () => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 60.153 60.846">
+
+            <g id="Group_110" transform="translate(-413.244 4110.413)">
+                <path id="Path_50" d="M360.21 141a28.792 28.792 0 0 1-41.29 4.881" className="cls-1"
+                      transform="translate(105.04 -4202.793)"/>
+                <path id="Path_51"
+                      d="M320.36 96.346l3.449-14.4 7.279-2.979 4.3-11.246-3.642-4.633-9.925 4.633 12.9-15.221 9.925 5.625 5.958 20.184 8.929 4.3 1.325 8.6"
+                      className="cls-1" transform="translate(104.215 -4152.121)"/>
+                <path id="Line_4" d="M0 0L0.757 14.14" className="cls-1" transform="translate(434.731 -4072.381)"/>
+                <path id="Line_5" d="M0.906 0L0 15.319" className="cls-1" transform="translate(453.919 -4073.813)"/>
+                <path id="Path_52" d="M295.646 67.211l4.054-1.761a28.3 28.3 0 0 0 2.526 32.8" className="cls-1"
+                      transform="translate(118.38 -4159.536)"/>
+                <path id="Path_53" d="M345.849 28.22l2.342 3.552a28.339 28.339 0 0 0-24.851 3.975" className="cls-1"
+                      transform="translate(102.509 -4138.22)"/>
+                <path id="Path_54"
+                      d="M415.085 74.442L411.32 78.4a28.315 28.315 0 0 0 1.184-4.975 29.207 29.207 0 0 0 .282-4.035 28.24 28.24 0 0 0-11.306-22.62"
+                      className="cls-1" transform="translate(57.769 -4148.841)"/>
+            </g>
+        </svg>
+
+    )
+}
+
+export default RebrandingIcon
