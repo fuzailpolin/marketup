@@ -9,19 +9,25 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ['"Poppins"', '"sans-serif"']
+        poppins: ['"Poppins"', '"sans-serif"'],
+        mons: ['Montserrat', 'sans-serif']
 
       },
       colors: {
-        highlight: "#ED3C78",
-        descColor: "#333333",
+        primary: "#ED3C78",
+        secondary: "#333333",
+      },
+      height: {
+        '30vh': '30vh',
+        '70vh': '70vh',
+        '25vh': '25vh'
       }
-
     },
   },
   variants: {
     extend: {
       margin: ["even"],
+      transitionProperty: ['hover']
     },
   },
   plugins: [],
