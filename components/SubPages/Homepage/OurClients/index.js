@@ -1,4 +1,4 @@
-const { default: LogoSlider } = require("../../../Slider/LogoSlider")
+import LogoSlider from '../../../Slider/LogoSlider';
 
 const logos = [
     '/Images/homepage/cientsLogo/aws.svg',

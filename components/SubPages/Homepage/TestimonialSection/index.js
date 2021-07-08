@@ -32,8 +32,7 @@ const TestimonialSection = () => {
     return (
         <div 
             style={{
-                //temporay image. this will change after ui/ux provide it.
-                backgroundImage: 'url(/Images/homepage/tempBG.jpg)', 
+                backgroundImage: 'url(/Images/homepage/clientFeedbackBG.png)', 
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
