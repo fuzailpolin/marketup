@@ -1,7 +1,7 @@
 const GalleryHero = () => {
     return (
         <div>
-            <img src='/Images/Career/GalleryHero.webp' alt='not found' />
+            <img src='/Images/Gallery/GalleryHero.webp' alt='not found' />
         </div>
     );
 }

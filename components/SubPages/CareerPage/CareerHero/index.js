@@ -1,7 +1,7 @@
 const CareerHero = () => {
     return (
-        <div className={'h-full'}>
-            <img className={'object-cover w-full'} src='/Images/Career/careerHero.webp' alt='not found' />
+        <div>
+            <img className={'object-fill h-75vh w-full'} src='/Images/Career/careerHero.jpg' alt='not found' />
         </div>
     );
 }
