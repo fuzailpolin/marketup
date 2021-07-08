@@ -30,7 +30,15 @@ const data = [
 
 const TestimonialSection = () => {
     return (
-        <div style={{backgroundImage: 'url(/Images/Gallery/GalleryHero.webp)'}} >
+        <div 
+            style={{
+                //temporay image. this will change after ui/ux provide it.
+                backgroundImage: 'url(/Images/homepage/tempBG.jpg)', 
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat'
+            }} 
+        >
             <div className={'mx-12 py-5'}>
                 <TestimonialSlider data={data} />
             </div>

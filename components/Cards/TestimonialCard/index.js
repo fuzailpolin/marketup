@@ -1,7 +1,7 @@
 const TestimonialCard = ({text, name, designation, company}) => {
     return (
         <div className={'container mx-auto'}>
-            <div className={'text-white font-poppins text-center  py-10'}>
+            <div className={'text-white font-poppins text-center md:px-20 lg:px-32 py-10'}>
                 <p className={'text-base font-light'}>
                     {text}
                 </p>
