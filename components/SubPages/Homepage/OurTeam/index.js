@@ -1,4 +1,5 @@
 import TeamCard from "../../../Cards/TeamCard";
+import TeamSlider from "../../../Slider/TeamSlider";
 
 const team = [
     {
@@ -10,6 +11,11 @@ const team = [
         name: 'Nasif Zuhayer Auritro',
         designation: 'COO',
         image: '/Images/temp/temp2.jpg'
+    },
+    {
+        name: 'Tanvir Ahmed (Teyder)',
+        designation: 'CMO',
+        image: '/Images/temp/temp4.jpg'
     },
     {
         name: 'Tanvir Ahmed (Teyder)',
@@ -40,16 +46,8 @@ const OurTeam = () => {
                 </div>
                 <div className={'lg:col-span-4 col-span-0 md:col-span-3 '}></div>
             </div>
-            <div className={'grid grid-cols-12'}>
-                {
-                    team.map((item, index)=>{
-                        return (
-                            <div key={index} className={'col-span-12 md:col-span-6 lg:col-span-4 mx-5'}>
-                                <TeamCard {...item} />
-                            </div>
-                        )
-                    })
-                }
+            <div className={'mx-10'}>
+                <TeamSlider team={team} />
             </div>
         </div>
     );
