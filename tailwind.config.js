@@ -16,6 +16,7 @@ module.exports = {
       colors: {
         primary: "#ED3C78",
         secondary: "#333333",
+        dark: '#202020'
       },
       height: {
         '30vh': '30vh',
