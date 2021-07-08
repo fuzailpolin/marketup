@@ -91,7 +91,7 @@ const ServiceSection = () => {
             <div className="grid md:grid-cols-3 gap-3">
                 {
                     services.map((services) => (
-                        services?.key ? <ServiceCard {...services} /> : <div> </div>
+                        services?.key ? <ServiceCard {...services} /> : <div key={Math.random}> </div>
                     ))
                 }
         </div>

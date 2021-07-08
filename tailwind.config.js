@@ -16,11 +16,15 @@ module.exports = {
       colors: {
         primary: "#ED3C78",
         secondary: "#333333",
+        jobsBorder: "#707070",
+        dark: '#202020'
       },
       height: {
         '30vh': '30vh',
         '70vh': '70vh',
-        '25vh': '25vh'
+        '25vh': '25vh',
+        '75vh': '75vh',
+        '80vh': '80vh'
       }
     },
   },
