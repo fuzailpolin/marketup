@@ -12,29 +12,24 @@ html {
   scroll-behavior: smooth;
 }
 
-
 @import "~react-image-gallery/styles/css/image-gallery.css";
 
-.cls-1{
-    fill:none;
-    stroke:#fff;
-    stroke-miterlimit:10;
-    stroke-width:1.5px
+.cls-1 {
+  fill: none;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  stroke-width: 1.5px;
 }
 
-
-.image-gallery.fullscreen-modal{
-    z-index: 100000 !important;
-    background: #211f1fcc !important;
+.image-gallery.fullscreen-modal {
+  z-index: 100000 !important;
+  background: #211f1fcc !important;
 }
 
-.image-gallery-content.fullscreen{
-    background: unset !important;
+.image-gallery-content.fullscreen {
+  background: unset !important;
 }
 
-.xx:hover div{
-    @apply opacity-100;
+.xx:hover div {
+  @apply opacity-100;
 }
-
-
-
