@@ -2,6 +2,7 @@ import React from "react";
 import HeroSection from "../components/SubPages/Homepage/HeroSection";
 import AboutMarketUp from "../components/SubPages/Homepage/AboutMarketUp";
 import ServiceSection from "../components/SubPages/Homepage/ServiceSection";
+import OurTeam from "../components/SubPages/Homepage/OurTeam";
 
 
 // import layout
@@ -13,6 +14,7 @@ const HomePage = () => {
             <HeroSection/>
             <AboutMarketUp/>
             <ServiceSection/>
+            <OurTeam />
 
         </HomeLayout>
     );
