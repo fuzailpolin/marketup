@@ -17,6 +17,7 @@ module.exports = {
         primary: "#ED3C78",
         secondary: "#333333",
         jobsBorder: "#707070",
+        dark: '#202020'
       },
       height: {
         '30vh': '30vh',

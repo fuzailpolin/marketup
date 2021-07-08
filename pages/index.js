@@ -7,6 +7,7 @@ import OurTeam from "../components/SubPages/Homepage/OurTeam";
 
 // import layout
 import HomeLayout from "../layouts/HomeLayout";
+import OurWorkSection from "../components/SubPages/Homepage/OurWorkSection";
 
 const HomePage = () => {
     return (
@@ -15,6 +16,7 @@ const HomePage = () => {
             <AboutMarketUp/>
             <ServiceSection/>
             <OurTeam />
+            <OurWorkSection />
 
         </HomeLayout>
     );
