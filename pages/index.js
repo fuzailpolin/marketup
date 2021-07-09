@@ -11,6 +11,7 @@ import OurWorkSection from "../components/SubPages/Homepage/OurWorkSection";
 import OurClients from "../components/SubPages/Homepage/OurClients";
 import TestimonialSection from "../components/SubPages/Homepage/TestimonialSection";
 import PartnershipSection from "../components/SubPages/Homepage/PartnershipSection";
+import ContactUs from "../components/SubPages/Homepage/ContactUs";
 
 const HomePage = () => {
     return (
@@ -23,6 +24,7 @@ const HomePage = () => {
             <OurClients />
             <TestimonialSection />
             <PartnershipSection />
+            <ContactUs />
 
         </HomeLayout>
     );
