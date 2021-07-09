@@ -58,9 +58,9 @@ const OurWorkSection = () => {
             }
 
 
-            <div className={'container mx-auto my-10'}>
+            <div className={'container mx-auto pt-20'} id={'work'}>
                 <div>
-                    <h2 className={'text-secondary pb-5 font-medium text-center text-lg md:text-xl font-mons'}>
+                    <h2 className={'text-secondary pb-10 font-medium text-center text-lg md:text-2xl font-mons'}>
                         Our
                         <span className={'ml-1 text-primary font-bold border-b-2 border-primary'}>
                             Works

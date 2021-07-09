@@ -1,4 +1,5 @@
 import {FaFacebookF, FaInstagram, FaLinkedinIn} from 'react-icons/fa'
+import Link from 'next/link'
 
 const Footer = () => {
     return (
@@ -27,10 +28,22 @@ const Footer = () => {
                         {/*    grid col start*/}
                         <div className={'md:py-10 pl-2 md:pl-10 py-2 md:py-4'}>
                             <h2 className={'text-sm font-poppins text-white font-medium py-1 md:py-3'}>About</h2>
-                            <p className="py-1 md:py-2 font-normal text-xs font poppins text-white">How MarketUp
-                                Works?</p>
-                            <p className="py-1 md:py-2 font-normal text-xs font poppins text-white">Client</p>
-                            <p className="py-1 md:py-2 font-normal text-xs font poppins text-white">About Us</p>
+                            <p className="py-1 md:py-2 font-normal text-xs font poppins text-white">
+                                <Link href={'/career'}>
+                                    Career
+                                </Link>
+                            </p>
+                            <p className="py-1 md:py-2 font-normal text-xs font poppins text-white">
+                                <Link href={'/#client'}>
+                                    Client
+                                </Link>
+
+                            </p>
+                            <p className="py-1 md:py-2 font-normal text-xs font poppins text-white">
+                                <Link href={'/#about'}>
+                                    About Us
+                                </Link>
+                            </p>
                         </div>
                         {/*    grid col end*/}
 

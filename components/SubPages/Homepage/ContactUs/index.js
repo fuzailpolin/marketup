@@ -3,16 +3,16 @@ import ContactUsInfo from "../../../Cards/ContactUsInfo";
 
 const ContactUs = () => {
     return (
-        <div className={'container mx-auto my-10'}>
+        <div className={'container mx-auto pt-20'} id={'contact'}>
             <div>
                 <h2 className={'text-secondary pb-5 font-medium text-center text-lg md:text-2xl font-mons'}>
-                    <span className={'text-primary font-bold border-b-2 border-primary'}>
+                    <span className={'text-primary font-bold border-b-2 border-primary mr-1'}>
                         Contact
                     </span>
                     Us
                 </h2>
             </div>
-            <div className={'my-10'}>
+            <div className={'md:my-10 my-5'}>
                 <div className={'grid grid-cols-12'}>
                     <div className={'col-span-12 md:col-span-7'}>
                         <div className={'grid justify-end mx-3 md:mx-6 lg:mx-14'}>

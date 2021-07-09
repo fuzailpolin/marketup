@@ -81,8 +81,8 @@ const services = [
 const ServiceSection = () => {
 
     return (
-        <div className="container md:mx-auto">
-            <h2 className={'text-secondary pt-5 pb-5 md:pb-10 md:pt-16 font-medium text-center text-lg md:text-xl font-mons'}>
+        <div className="container md:mx-auto" id={'service'}>
+            <h2 className={'text-secondary  pb-5 md:pb-10 pt-20 font-medium text-center text-lg md:text-2xl font-mons'}>
                 <span className={'ml-1 text-primary font-bold border-b-2 border-primary'}>
                     Services
                 </span>

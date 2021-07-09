@@ -17,7 +17,7 @@ const logos = [
 
 const OurClients = () => {
     return (
-        <div className={'container mx-auto mb-10'}>
+        <div className={'container mx-auto pt-20'} id={'client'}>
             <div>
                 <h2 className={'text-secondary pb-5 font-medium text-center text-lg md:text-2xl font-mons'}>
                     Our
