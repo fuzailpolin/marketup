@@ -8,6 +8,9 @@ import OurTeam from "../components/SubPages/Homepage/OurTeam";
 // import layout
 import HomeLayout from "../layouts/HomeLayout";
 import OurWorkSection from "../components/SubPages/Homepage/OurWorkSection";
+import OurClients from "../components/SubPages/Homepage/OurClients";
+import TestimonialSection from "../components/SubPages/Homepage/TestimonialSection";
+import PartnershipSection from "../components/SubPages/Homepage/PartnershipSection";
 
 const HomePage = () => {
     return (
@@ -17,6 +20,9 @@ const HomePage = () => {
             <ServiceSection/>
             <OurTeam />
             <OurWorkSection />
+            <OurClients />
+            <TestimonialSection />
+            <PartnershipSection />
 
         </HomeLayout>
     );
