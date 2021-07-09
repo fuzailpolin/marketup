@@ -1,17 +1,17 @@
 const TestimonialCard = ({text, name, designation, company}) => {
     return (
         <div className={'container mx-auto'}>
-            <div className={'text-white font-poppins text-center md:px-20 lg:px-32 py-10'}>
-                <p className={'text-base font-light'}>
+            <div className={'text-white font-poppins text-center md:px-20 lg:px-32 md:py-8 py-4'}>
+                <p className={'text-xs md:text-base font-light'}>
                     {text}
                 </p>
-                <p className={'text-xl mt-6'}>
+                <p className={'font-bold text-xl mt-6'}>
                     {name}
                 </p>
-                <p className={'text-base font-light mt-3'}>
+                <p className={'text-base mt-2'}>
                     {designation} 
                 </p>
-                <p className={'text-base font-light mt-1'}>
+                <p className={'text-base font-medium mt-1'}>
                     {company}
                 </p>
             </div>

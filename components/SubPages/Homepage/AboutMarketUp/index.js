@@ -5,8 +5,8 @@ const AboutMarketUp = () => {
 
 
     return (
-        <div className={'container mx-auto py-5 md:py-10 bg-white bg-no-repeat bg-cover'} >
-            <h2 className={'text-secondary font-medium text-center text-lg md:text-xl font-mons'}>
+        <div className={'container mx-auto pt-20 bg-white bg-no-repeat bg-cover'} id={'about'}>
+            <h2 className={'text-secondary font-medium text-center text-lg md:text-2xl font-mons'}>
                 About
                 <span className={'ml-1 text-primary font-bold border-b-2 border-primary'}>
                     Marketupgroup
@@ -30,7 +30,7 @@ const AboutMarketUp = () => {
 
 
 
-            <h2 className={'text-secondary pt-10 md:pt-16 font-medium text-center text-lg md:text-xl font-mons'}>
+            <h2 className={'text-secondary pt-10 md:pt-16 font-medium text-center text-lg md:text-2xl font-mons'}>
                 Why Should
                 <span className={'ml-1 text-primary font-bold border-b-2 border-primary'}>
                     You Choose Us?

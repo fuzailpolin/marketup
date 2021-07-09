@@ -38,7 +38,7 @@ const TestimonialSection = () => {
                 backgroundRepeat: 'no-repeat'
             }} 
         >
-            <div className={'mx-12 py-5'}>
+            <div className={'mx-12 py-5 my-10'}>
                 <TestimonialSlider data={data} />
             </div>
         </div>

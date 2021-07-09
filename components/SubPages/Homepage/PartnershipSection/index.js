@@ -54,10 +54,10 @@ const data = [
 const PartnershipSection = () => {
     return (
         <div>
-            <div className={'mt-20 mb-10'}>
-                <h2 className={'text-secondary pb-5 font-medium text-center text-lg md:text-2xl font-mons'}>
+            <div className={'pt-20'}>
+                <h2 className={'text-secondary pb-10 font-medium text-center text-lg md:text-2xl font-mons'}>
                         Partnership 
-                    <span className={'ml-3 text-primary font-bold border-b-2 border-primary'}>
+                    <span className={'ml-1 text-primary font-bold border-b-2 border-primary'}>
                         Program
                     </span>
                 </h2>
