@@ -33,3 +33,68 @@ html {
 .xx:hover div {
   @apply opacity-100;
 }
+
+
+
+.Dropdown-control {
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  @apply h-16;
+}
+
+.Dropdown-placeholder {
+  padding-top: 23px;
+  padding-left: 2px;
+  @apply text-gray-600;
+}
+
+.Dropdown-arrow {
+  @apply mt-4;
+}
+
+.contain {
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.contain::-webkit-scrollbar {
+  display: none;
+}
+
+.nunito {
+  font-family: "nunito", font-sans;
+}
+
+.border-b-1 {
+  border-bottom-width: 1px;
+}
+
+.border-l-1 {
+  border-left-width: 1px;
+}
+
+hover\:border-none:hover {
+  border-style: none;
+}
+
+#sidebar {
+  transition: ease-in-out all 0.3s;
+  z-index: 9999;
+}
+
+#sidebar span {
+  transition: ease-in-out all 0.1s;
+}
+
+.closeNav {
+  width: 0;
+}
+
+.openNav {
+  width: 150px;
+  @apply px-4;
+}
+
+

@@ -1,4 +1,5 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import { FaAngleDown, FaAngleUp, FaBookOpen, FaBars } from 'react-icons/fa'
 
 
@@ -6,6 +7,14 @@ import { FaAngleDown, FaAngleUp, FaBookOpen, FaBars } from 'react-icons/fa'
 const AdminLayout = ({children}) => {
     const miniMenu = useRef(null)
     const sidebar = useRef(null)
+    const router = useRouter();
+    const [show, setShow] = useState(false)
+
+    useEffect(() => {
+        setTimeout(() => {
+            setShow(true)
+        }, 1000)
+    }, [])
 
 
     const [down, setDown] = useState(true)
@@ -37,6 +46,11 @@ const AdminLayout = ({children}) => {
     }
 
 
+    if(!show){
+        return <div></div>
+    }
+
+
     return (
         <div className="flex h-screen bg-gray-100 font-sans overflow-hidden">
             <div id="sidebar" ref={sidebar}
@@ -47,10 +61,10 @@ const AdminLayout = ({children}) => {
                         <a href="#"
                            className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
 
-                                <FaBookOpen className={'inline'}/>
+                            <FaBookOpen className={'inline'}/>
 
                             <span
-                            className="block pl-2 md:pb-0 text-sm left-10">Dashboard</span>
+                                className="block pl-2 md:pb-0 text-sm left-10">Dashboard</span>
                         </a>
                     </li>
                 </ul>
