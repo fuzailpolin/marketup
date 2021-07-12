@@ -1,16 +1,36 @@
-
+import FormDataParser from '../../tools/FormDataParser'
+import upload from '../../tools/cloudinary/upload'
+import TeamModel from '../../tools/db/Model/TeamModel'
 import connectDB from '../../tools/db/connection'
-import Team from '../../tools/db/Model/TeamModel'
 
+export const config = {
+    api: {
+        bodyParser: false
+    }
+}
 
 export default async (req, res) => {
-    await connectDB()
-    const team = await Team.create({
-        name: 'IMran Hossain',
-        designation : " CEO",
-        image: 'imagedsf'
-    })
 
-    res.send(team)
+    try{
+        await connectDB();
+        const data = await FormDataParser(req)
+        const up = await upload(data.files.f, 'team')
+        console.log(typeof up)
+        const team = await TeamModel.create({
+            name: 'Imran Hossain',
+            designation :'CEO',
+            image: up.public_id
+
+
+        })
+        res.send(team)
+    }catch (e) {
+        res.send(e.message)
+    }
+
+
+
+
+
 
 }
