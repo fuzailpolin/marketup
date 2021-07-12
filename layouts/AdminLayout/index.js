@@ -63,8 +63,88 @@ const AdminLayout = ({children}) => {
 
                             <FaBookOpen className={'inline'}/>
 
-                            <span
-                                className="block pl-2 md:pb-0 text-sm left-10">Dashboard</span>
+                            <span className="block pl-2 md:pb-0 text-sm left-10">Dashboard</span>
+
+                        </a>
+                    </li>
+
+                    <li className="my-2 md:my-0">
+                        <a href="#"
+                           className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
+
+                            <FaBookOpen className={'inline'}/>
+
+                            <span className="block pl-2 md:pb-0 text-sm left-10">Teams</span>
+
+                        </a>
+                    </li>
+
+                    <li className="my-2 md:my-0">
+                        <a href="#"
+                           className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
+
+                            <FaBookOpen className={'inline'}/>
+
+                            <span className="block pl-2 md:pb-0 text-sm left-10">Works</span>
+
+                        </a>
+                    </li>
+
+                    <li className="my-2 md:my-0">
+                        <a href="#"
+                           className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
+
+                            <FaBookOpen className={'inline'}/>
+
+                            <span className="block pl-2 md:pb-0 text-sm left-10">Clients</span>
+
+                        </a>
+                    </li>
+
+
+                    <li className="my-2 md:my-0">
+                        <a href="#"
+                           className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
+
+                            <FaBookOpen className={'inline'}/>
+
+                            <span className="block pl-2 md:pb-0 text-sm left-10">Testimonials</span>
+
+                        </a>
+                    </li>
+
+
+                    <li className="my-2 md:my-0">
+                        <a href="#"
+                           className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
+
+                            <FaBookOpen className={'inline'}/>
+
+                            <span className="block pl-2 md:pb-0 text-sm left-10">Partnership</span>
+
+                        </a>
+                    </li>
+
+                    <li className="my-2 md:my-0">
+                        <a href="#"
+                           className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
+
+                            <FaBookOpen className={'inline'}/>
+
+                            <span className="block pl-2 md:pb-0 text-sm left-10">Job</span>
+
+                        </a>
+                    </li>
+
+
+                    <li className="my-2 md:my-0">
+                        <a href="#"
+                           className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
+
+                            <FaBookOpen className={'inline'}/>
+
+                            <span className="block pl-2 md:pb-0 text-sm left-10">Contacts</span>
+
                         </a>
                     </li>
                 </ul>
