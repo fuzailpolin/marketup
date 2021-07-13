@@ -1,5 +1,6 @@
 import React from "react";
 import Link from 'next/link';
+import { AiOutlineInstagram } from "react-icons/ai";
 
 const OpeningsDetails = ({ slug, position, vacancy, jobType, deadLine, link }) => {
   return (
@@ -11,7 +12,7 @@ const OpeningsDetails = ({ slug, position, vacancy, jobType, deadLine, link }) =
       <div className={"col-span-12 md:col-span-4"}>
         <p
           className={
-            "text-base md:text-2xl font-semibold text-left md:text-left"
+            "text-base text-gray-100 md:text-2xl font-semibold text-left md:text-left"
           }
         >
           {position}
@@ -23,7 +24,7 @@ const OpeningsDetails = ({ slug, position, vacancy, jobType, deadLine, link }) =
             <div className="mb-2 text-xs md:text-sm text-gray-400 font-semibold">
               Vacancy
             </div>
-            <div className="font-semibold text-xs md:text-sm">{vacancy}</div>
+            <div className="font-semibold text-gray-100 text-xs md:text-sm">{vacancy}</div>
           </div>
         </div>
         <div className={"col-span-6 md:col-span-3 pb-2"}>
@@ -31,7 +32,7 @@ const OpeningsDetails = ({ slug, position, vacancy, jobType, deadLine, link }) =
             <div className="mb-2 text-xs md:text-sm text-gray-400 font-semibold">
               Job Type
             </div>
-            <div className="font-semibold text-xs md:text-sm">{jobType}</div>
+            <div className="font-semibold text-gray-100 text-xs md:text-sm">{jobType}</div>
           </div>
         </div>
         <div className={"col-span-12 md:col-span-6 pb-2 md:ml-auto md:mr-0"}>
@@ -46,7 +47,7 @@ const OpeningsDetails = ({ slug, position, vacancy, jobType, deadLine, link }) =
                     "leading-none flex flex-row md:justify-center items-center"
                   }
                 >
-                  <div className="font-semibold text-xs md:text-sm">
+                  <div className="font-semibold text-gray-100 text-xs md:text-sm">
                     {deadLine?.lastDate}
                   </div>
                   <div className="font-bold text-xs text-gray-400 ml-2">
@@ -62,7 +63,7 @@ const OpeningsDetails = ({ slug, position, vacancy, jobType, deadLine, link }) =
                     <img className={'mr-2 bg-gray-100 rounded-full p-2 w-9 h-9 cursor-pointer'} src='/Images/Career/facebook.svg' alt='fb not found' />
                   </Link>
                   <Link href={link?.insta}>
-                    <img className={'ml-2 bg-gray-100 rounded-full p-2 w-9 h-9 cursor-pointer'}  src='/Images/Career/instagram.svg' alt='insta svg not found' />
+                    <AiOutlineInstagram className={'ml-2 bg-gray-100 text-primary rounded-full p-1 w-9 h-9 cursor-pointer'} />
                   </Link>
                 </div>
               </div>

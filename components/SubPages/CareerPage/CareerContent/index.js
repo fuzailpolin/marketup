@@ -10,12 +10,14 @@ const data = {
 
 const CareerContent = () => {
     return (
+        <div className={'bg-black'}>
         <div className={'container mx-auto grid place-items-center p-2'}>
-            <p className={'text-center text-xl font-mons font-semibold my-8'}>
+            <p className={'text-center text-gray-100 text-xl font-typoSlab font-semibold my-8'}>
                 {data.title}
             </p>
-            <p className={'text-left md:w-3/5 text-sm font-poppins font-light text-descColor mb-10'} dangerouslySetInnerHTML={{ __html: data.description }} >
+            <p className={'text-left text-gray-200 md:w-3/5 text-sm font-poppins font-light text-descColor mb-10'} dangerouslySetInnerHTML={{ __html: data.description }} >
             </p>
+        </div>
         </div>
     );
 }

@@ -4,7 +4,7 @@ import Link from 'next/link'
 const Footer = () => {
     return (
         <>
-            <div className={'pt-8'}>
+            <div className={'bg-black pt-8'}>
                 <iframe className={'w-full h-60 md:h-96'}
                     src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14593.529954832293!2d90.40427345887082!3d23.876051964805423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1625727000429!5m2!1sen!2sbd"
                     allowFullScreen="" style={{filter: 'invert(100%)'}} loading="lazy"></iframe>
@@ -26,7 +26,7 @@ const Footer = () => {
 
 
                         {/*    grid col start*/}
-                        <div className={'md:py-10 pl-2 md:pl-10 py-2 md:py-4'}>
+                        <div className={'md:py-10 pl-2 md:pl-10 py-2'}>
                             <h2 className={'text-sm font-poppins text-white font-medium py-1 md:py-3'}>About</h2>
                             <p className="py-1 md:py-2 font-normal text-xs font poppins text-white">
                                 <Link href={'/career'}>
@@ -48,7 +48,7 @@ const Footer = () => {
                         {/*    grid col end*/}
 
                         {/* grid col start*/}
-                        <div className={'md:py-10 pl-2 md:pl-10 py-2 md:py-4'}>
+                        <div className={'md:py-10 pl-2 md:pl-10 py-2'}>
                             <h2 className={'text-sm font-poppins text-white font-medium py-1 md:py-3'}>Social Media</h2>
                             <div className={'text-primary pt-3 md:pt-7'}>
                                 <div

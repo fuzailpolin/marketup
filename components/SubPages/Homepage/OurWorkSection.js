@@ -29,7 +29,7 @@ const OurWorkSection = () => {
     }, [visible])
 
     return (
-        <>
+        <div className={'bg-black pb-10'}>
             {
                 visible.show && (
                     <ImageGallery
@@ -60,7 +60,7 @@ const OurWorkSection = () => {
 
             <div className={'container mx-auto pt-20'} id={'work'}>
                 <div>
-                    <h2 className={'text-secondary pb-10 font-medium text-center text-lg md:text-2xl font-mons'}>
+                    <h2 className={'text-gray-200 pb-10 font-medium text-center text-lg md:text-2xl font-typoSlab'}>
                         Our
                         <span className={'ml-1 text-primary font-bold border-b-2 border-primary'}>
                             Works
@@ -101,7 +101,7 @@ const OurWorkSection = () => {
 
 
                 <div>
-                    <h2 className={'text-secondary pb-5 font-medium text-center text-lg md:text-xl font-mons my-6'}>
+                    <h2 className={'text-secondary font-medium text-center text-lg md:text-xl font-mons my-6'}>
                         <Link href={'/gallery'}>
                             <a className={'text-white font-mons bg-primary py-2 px-3 rounded-full font-semibold'}>
                                 View More
@@ -111,7 +111,7 @@ const OurWorkSection = () => {
                     </h2>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

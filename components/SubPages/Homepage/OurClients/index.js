@@ -17,9 +17,10 @@ const logos = [
 
 const OurClients = () => {
     return (
+        <div className={'bg-black pb-10'}>
         <div className={'container mx-auto pt-20'} id={'client'}>
             <div>
-                <h2 className={'text-secondary pb-5 font-medium text-center text-lg md:text-2xl font-mons'}>
+                <h2 className={'text-gray-200 pb-5 font-medium text-center text-lg md:text-2xl font-typoSlab'}>
                     Our
                     <span className={'ml-1 text-primary font-bold border-b-2 border-primary'}>
                         Clients
@@ -30,6 +31,7 @@ const OurClients = () => {
                 <LogoSlider logos={logos} />
             </div>
             
+        </div>
         </div>
     );
 }

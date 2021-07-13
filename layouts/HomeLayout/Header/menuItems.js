@@ -7,30 +7,32 @@ const SubNavItems = () => (
         </li>
 
         <li>
-            <Link href={'#about'}>About</Link>
+            <Link href={'/#about'}>About</Link>
         </li>
 
         <li>
-            <a href={'#service'}>Service</a>
+            <a href={'/#service'}>Service</a>
         </li>
 
 
         <li>
-            <Link href={'#team'}>Our Team</Link>
+            <Link href={'/#team'}>Our Team</Link>
         </li>
 
         <li>
-            <Link href={'#work'}>Work</Link>
+            <Link href={'/#work'}>Work</Link>
         </li>
 
         <li>
-            <Link href={'#client'}>Client</Link>
+            <Link href={'/#client'}>Client</Link>
         </li>
 
-
+        <li>
+            <Link href={'/#contact'}>Contact</Link>
+        </li>
 
         <li>
-            <Link href={'#contact'}>Contact</Link>
+            <Link href={'/career'}>Career</Link>
         </li>
 
     </>

@@ -81,8 +81,9 @@ const services = [
 const ServiceSection = () => {
 
     return (
+        <div className={'bg-black'}>
         <div className="container md:mx-auto" id={'service'}>
-            <h2 className={'text-secondary  pb-5 md:pb-10 pt-20 font-medium text-center text-lg md:text-2xl font-mons'}>
+            <h2 className={'text-secondary  pb-5 md:pb-10 pt-20 font-medium text-center text-lg md:text-2xl font-typoSlab'}>
                 <span className={'ml-1 text-primary font-bold border-b-2 border-primary'}>
                     Services
                 </span>
@@ -94,10 +95,10 @@ const ServiceSection = () => {
                         services?.key ? <ServiceCard {...services} /> : <div key={Math.random}> </div>
                     ))
                 }
+            </div>
+            {/*  cards holder end*/}
         </div>
-    {/*  cards holder end*/
-    }
-</div>
+        </div>
 )
 }
 

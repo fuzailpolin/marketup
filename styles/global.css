@@ -8,24 +8,27 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+@font-face {
+  font-family: "TypoSlab_irregular";
+  src: url("/fonts/Typoslab_ irregular/TypoSlab Irregular Demo.otf");
+  font-display: swap;
+}
+
 html {
   scroll-behavior: smooth;
 }
-
 
 @keyframes oo {
   from {
     opacity: 0;
   }
 
-  to{
+  to {
     opacity: 1;
   }
 }
 
-
-
-.image-gallery fullscreen-modal{
+.image-gallery fullscreen-modal {
   animation-name: oo;
   animation-duration: 1s;
   animation-fill-mode: forwards;
@@ -53,8 +56,6 @@ html {
 .xx:hover div {
   @apply opacity-100;
 }
-
-
 
 .Dropdown-control {
   background: transparent !important;
@@ -116,5 +117,3 @@ hover\:border-none:hover {
   width: 150px;
   @apply px-4;
 }
-
-

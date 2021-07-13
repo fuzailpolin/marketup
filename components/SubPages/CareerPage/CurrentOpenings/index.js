@@ -4,9 +4,9 @@ import OpeningsDetails from "./OpeningsDetails/OpeningsDetails";
 
 const CurrentOpenings = () => {
   return (
-    <>
+    <div className={'bg-black'}>
       <div>
-        <h2 className={'text-secondary pb-5 font-medium text-center text-lg md:text-2xl font-mons'}>
+        <h2 className={'text-gray-100 pb-5 font-medium text-center text-lg md:text-2xl font-typoSlab'}>
           Recent
           <span className={'ml-2 text-primary font-bold'}>
             Jobs
@@ -20,7 +20,7 @@ const CurrentOpenings = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

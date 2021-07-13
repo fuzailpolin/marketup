@@ -10,8 +10,8 @@ module.exports = {
     extend: {
       fontFamily: {
         poppins: ['"Poppins"', '"sans-serif"'],
-        mons: ['Montserrat', 'sans-serif']
-
+        mons: ['Montserrat', 'sans-serif'],
+        typoSlab: ['TypoSlab_irregular', 'sans-serif']
       },
       colors: {
         primary: "#ED3C78",

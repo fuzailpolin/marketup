@@ -30,16 +30,18 @@ const data = [
 
 const TestimonialSection = () => {
     return (
-        <div 
-            style={{
-                backgroundImage: 'url(/Images/homepage/clientFeedbackBG.png)', 
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat'
-            }} 
-        >
-            <div className={'mx-12 py-5 my-10'}>
-                <TestimonialSlider data={data} />
+        <div className={'bg-black'}>
+            <div 
+                style={{
+                    backgroundImage: 'url(/Images/homepage/clientFeedbackBG.png)', 
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat'
+                }} 
+            >
+                <div className={'mx-12 p-5'}>
+                    <TestimonialSlider data={data} />
+                </div>
             </div>
         </div>
     );

@@ -64,13 +64,13 @@ const ContactUsForm = () => {
                         />
                     </div>
                 </div>
-                <div className={'border border-gray-300 my-3'}>
+                <div className={'my-3'}>
                     <textarea 
                         className={'h-full w-full p-3'} 
                         value={message}
                         onChange={(e)=>setMessage(e.target.value)}
                         name="message"
-                        rows="4" cols="50"
+                        rows="4" cols="55"
                         placeholder="Message"  
                         required 
                     />
