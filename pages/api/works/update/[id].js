@@ -60,7 +60,7 @@ const handler = async (req, res) => {
         const prevId = work.image
 
         if (files?.image) {
-            const {public_id} = await upload(files.image, 'team');
+            const {public_id} = await upload(files.image, 'work');
             work.image = public_id;
         }
 

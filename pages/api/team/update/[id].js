@@ -38,12 +38,10 @@ const handler = async (req, res) => {
         }
 
         // parse the form from FormData
-        console.log(team)
         const {files, fields} = await FormDataParser(req);
 
 
         const errors = updateTeamValidator({files, fields});
-        console.log(errors)
         // return if error
         if (errors) {
             return res.status(422).send(
