@@ -14,7 +14,6 @@ export const config = {
 }
 
 
-
 const handler = async (req, res) => {
 
     if (req.method !== 'PUT') {
@@ -38,12 +37,11 @@ const handler = async (req, res) => {
         }
 
         // parse the form from FormData
-        console.log(work)
         const {files, fields} = await FormDataParser(req);
 
 
         const errors = WorksUpdateValidator({files, fields});
-        console.log(errors)
+
         // return if error
         if (errors) {
             return res.status(422).send(
@@ -88,7 +86,6 @@ const handler = async (req, res) => {
             })
         )
     }
-
 
 }
 

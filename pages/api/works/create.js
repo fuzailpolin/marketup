@@ -17,7 +17,7 @@ export default async (req, res) => {
     const { method } = req;
 
     if(method != 'POST'){
-        return res.send( method + " method is not allowed!")
+        return res.status(404).send()
     }
 
     try{

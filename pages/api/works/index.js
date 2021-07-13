@@ -13,7 +13,8 @@ export default async (req, res) => {
         const works = await WorksModel.find({})
         res.status(200).send(
             Response({
-                data: works
+                data: works,
+                status_code: 200
             })
         )
     }catch (e) {
