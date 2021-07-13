@@ -14,7 +14,18 @@ export const config = {
 }
 
 
-
+/**
+ * @method PUT
+ *
+ * @requires FromData
+ *
+ * @param name String
+ * @param designation String
+ * @param image File image/png, image/jpg, image/jpeg [optional]
+ *
+ * @return TeamModel
+ *
+ * */
 const handler = async (req, res) => {
 
     if (req.method !== 'PUT') {

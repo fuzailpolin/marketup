@@ -2,7 +2,12 @@ import WorksModel from '../../../tools/db/Model/WorksModel'
 import connectDB from '../../../tools/db/connection'
 import Response from '../../../tools/Response'
 
-
+/**
+ * @method GET
+ *
+ * @return [WorksModel]
+ *
+ * */
 export default async (req, res) => {
     if(req.method !== 'GET'){
         return res.status(400).send()
@@ -27,8 +32,5 @@ export default async (req, res) => {
             )
         )
     }
-
-
-
 
 }

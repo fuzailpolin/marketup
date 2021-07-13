@@ -14,6 +14,18 @@ export const config = {
 }
 
 
+/**
+ * @method PUT
+ *
+ * @requires FromData
+ *
+ * @param company String
+ * @param work String
+ * @param image File image/png, image/jpg, image/jpeg [optional]
+ *
+ * @return WorksModel
+ *
+ * */
 const handler = async (req, res) => {
 
     if (req.method !== 'PUT') {

@@ -13,6 +13,18 @@ export const config = {
     }
 }
 
+/**
+ * @method POST
+ *
+ * @requires FromData
+ *
+ * @param company String
+ * @param work String
+ * @param image File image/png, image/jpg, image/jpeg
+ *
+ * @return WorksModel
+ *
+ * */
 export default async (req, res) => {
     const { method } = req;
 

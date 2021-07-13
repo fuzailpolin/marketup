@@ -1,8 +1,14 @@
-import TeamModal from '../../../tools/db/Model/TeamModel'
+import TeamModel from '../../../tools/db/Model/TeamModel'
 import connectDB from '../../../tools/db/connection'
 import Response from '../../../tools/Response'
 
 
+/**
+ * @method GET
+ *
+ * @return [TeamModel]
+ *
+ * */
 export default async (req, res) => {
     if(req.method !== 'GET'){
         return res.status(400).send()
@@ -10,7 +16,7 @@ export default async (req, res) => {
 
     try{
         await connectDB();
-        const teams = await TeamModal.find({})
+        const teams = await TeamModel.find({})
         res.send(
             Response({
                 data: teams

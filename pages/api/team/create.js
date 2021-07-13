@@ -13,6 +13,20 @@ export const config = {
     }
 }
 
+
+
+/**
+ * @method POST
+ *
+ * @requires FromData
+ *
+ * @param name String
+ * @param designation String
+ * @param image File image/png, image/jpg, image/jpeg
+ *
+ * @return [TeamModel]
+ *
+ * */
 export default async (req, res) => {
     const { method } = req;
 
