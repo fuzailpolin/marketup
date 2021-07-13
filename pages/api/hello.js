@@ -9,6 +9,7 @@ export const config = {
     }
 }
 
+
 export default async (req, res) => {
 
     try{
