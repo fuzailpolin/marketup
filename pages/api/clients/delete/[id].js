@@ -11,7 +11,13 @@ export const config = {
 }
 
 
-
+/**
+ * @method DELETE
+ *
+ * @query_params ObjectID
+ *
+ * @return
+ * */
 const handler = async (req, res) => {
 
     if (req.method !== 'DELETE') {

@@ -14,6 +14,17 @@ export const config = {
     }
 }
 
+
+/**
+ * @method POST
+ *
+ * @requires FromData
+
+ * @param image File image/png, image/jpg, image/jpeg
+ *
+ * @return ClientModel
+ *
+ * */
 export default async (req, res) => {
     const { method } = req;
 
