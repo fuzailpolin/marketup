@@ -19,8 +19,8 @@ export const config = {
  *
  * @param position String
  * @param vacancy Number
- * @param job_type String
- * @param last_date Date
+ * @param jobType String
+ * @param lastDate Date
  * @param fb String
  * @param insta String
  *
