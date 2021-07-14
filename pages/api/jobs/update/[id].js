@@ -1,8 +1,8 @@
 import connectDB from '../../../../tools/db/connection'
-import TestimonialModel from '../../../../tools/db/Model/TestimonialModel'
+import JobsModel from '../../../../tools/db/Model/JobsModel'
 import mongoose from 'mongoose'
 import FormDataParser from '../../../../tools/FormDataParser'
-import testimonialDataValidator from '../../../../tools/validators/testimonials/testimonialDataValidator'
+import jobsDataValidator from '../../../../tools/validators/jobs/jobsDataValidator'
 import Response from '../../../../tools/Response'
 
 export const config = {
@@ -16,13 +16,15 @@ export const config = {
  * @method PUT
  *
  * @requires FromData
+ * 
+ * @param position String
+ * @param vacancy Number
+ * @param job_type String
+ * @param last_date Date
+ * @param fb String
+ * @param insta String
  *
- * @param name String
- * @param text String
- * @param designation String
- * @param company String
- *
- * @return TestimonialModel
+ * @return JobsModel
  *
  * */
 const handler = async (req, res) => {
@@ -32,18 +34,18 @@ const handler = async (req, res) => {
     }
 
     try {
-        const {query: {id: testimonialId}} = req;
+        const {query: {id: jobsId}} = req;
 
         // object id validation
-        if (!mongoose.Types.ObjectId.isValid(testimonialId)) {
+        if (!mongoose.Types.ObjectId.isValid(jobsId)) {
             return res.status(404).send()
         }
         await connectDB();
 
 
-        const testimonial = await TestimonialModel.findById(testimonialId)
+        const jobs = await JobsModel.findById(jobsId)
         // db existence validation
-        if (!testimonial) {
+        if (!jobs) {
             return res.status(404).send()
         }
 
@@ -51,7 +53,7 @@ const handler = async (req, res) => {
         const {fields} = await FormDataParser(req);
 
 
-        const errors = testimonialDataValidator({fields});
+        const errors = jobsDataValidator({fields});
         // return if error
         if (errors) {
             return res.status(422).send(
@@ -64,16 +66,18 @@ const handler = async (req, res) => {
         }
         
         //alter data if any updated
-        testimonial.name = fields?.name?.trim();
-        testimonial.designation = fields?.designation?.trim();
-        testimonial.company = fields?.company?.trim();
-        testimonial.text = fields?.text?.trim();
+        jobs.position = fields?.position?.trim(),
+        jobs.vacancy = fields?.vacancy,
+        jobs.jobType = fields?.jobType?.trim(),
+        jobs.lastDate = fields?.lastDate,
+        jobs.fb = fields?.fb?.trim(),
+        jobs.insta = fields?.insta?.trim()
 
-        await testimonial.save()
+        await jobs.save()
 
         return res.status(201).send(
             Response({
-                data: testimonial,
+                data: jobs,
                 status_code: 201,
                 message: 'Update complete!'
             })
