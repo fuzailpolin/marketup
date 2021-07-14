@@ -1,11 +1,9 @@
 import connectDB from '../../../../tools/db/connection'
-import TeamModel from '../../../../tools/db/Model/TeamModel'
+import JobsModel from '../../../../tools/db/Model/JobsModel'
 import mongoose from 'mongoose'
 import FormDataParser from '../../../../tools/FormDataParser'
-import upload from '../../../../tools/cloudinary/upload'
-import updateTeamValidator from '../../../../tools/validators/team/updateTeamValidator'
+import jobsDataValidator from '../../../../tools/validators/jobs/jobsDataValidator'
 import Response from '../../../../tools/Response'
-import deleteImage from '../../../../tools/cloudinary/delete'
 
 export const config = {
     api: {
@@ -18,12 +16,15 @@ export const config = {
  * @method PUT
  *
  * @requires FromData
+ * 
+ * @param position String
+ * @param vacancy Number
+ * @param job_type String
+ * @param last_date Date
+ * @param fb String
+ * @param insta String
  *
- * @param name String
- * @param designation String
- * @param image File image/png, image/jpg, image/jpeg [optional]
- *
- * @return TeamModel
+ * @return JobsModel
  *
  * */
 const handler = async (req, res) => {
@@ -33,60 +34,52 @@ const handler = async (req, res) => {
     }
 
     try {
-        const {query: {id: teamId}} = req;
+        const {query: {id: jobsId}} = req;
 
         // object id validation
-        if (!mongoose.Types.ObjectId.isValid(teamId)) {
+        if (!mongoose.Types.ObjectId.isValid(jobsId)) {
             return res.status(404).send()
         }
         await connectDB();
 
 
-        const team = await TeamModel.findById(teamId)
+        const jobs = await JobsModel.findById(jobsId)
         // db existence validation
-        if (!team) {
+        if (!jobs) {
             return res.status(404).send()
         }
 
         // parse the form from FormData
-        const {files, fields} = await FormDataParser(req);
+        const {fields} = await FormDataParser(req);
 
 
-        const errors = updateTeamValidator({files, fields});
+        const errors = jobsDataValidator({fields});
         // return if error
         if (errors) {
             return res.status(422).send(
                 Response({
                     errors,
                     status_code: 422,
-                    message: 'Invalid input!'
+                    message: 'Invalid inputs!'
                 })
             )
         }
+        
+        //alter data if any updated
+        jobs.position = fields?.position?.trim(),
+        jobs.vacancy = fields?.vacancy,
+        jobs.jobType = fields?.jobType?.trim(),
+        jobs.lastDate = fields?.lastDate,
+        jobs.fb = fields?.fb?.trim(),
+        jobs.insta = fields?.insta?.trim()
 
-
-        team.name = fields.name.trim();
-        team.designation = fields.designation.trim();
-
-        const prevId = team.image
-
-        if (files?.image) {
-            const {public_id} = await upload(files.image, 'team');
-            team.image = public_id;
-        }
-
-        await team.save()
-
-        // delete previous image if new have
-        if (files?.image) {
-            await deleteImage(prevId);
-        }
+        await jobs.save()
 
         return res.status(201).send(
             Response({
-                data: team,
+                data: jobs,
                 status_code: 201,
-                message: 'Updated complete!'
+                message: 'Update complete!'
             })
         )
     } catch (e) {

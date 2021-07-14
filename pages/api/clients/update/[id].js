@@ -1,9 +1,9 @@
 import connectDB from '../../../../tools/db/connection'
-import TeamModel from '../../../../tools/db/Model/TeamModel'
+import ClientModel from '../../../../tools/db/Model/ClientsModel'
 import mongoose from 'mongoose'
 import FormDataParser from '../../../../tools/FormDataParser'
 import upload from '../../../../tools/cloudinary/upload'
-import updateTeamValidator from '../../../../tools/validators/team/updateTeamValidator'
+import clientDataValidator from '../../../../tools/validators/clients/clientDataValidator'
 import Response from '../../../../tools/Response'
 import deleteImage from '../../../../tools/cloudinary/delete'
 
@@ -19,11 +19,9 @@ export const config = {
  *
  * @requires FromData
  *
- * @param name String
- * @param designation String
- * @param image File image/png, image/jpg, image/jpeg [optional]
+ * @param image File image/png, image/jpg, image/jpeg
  *
- * @return TeamModel
+ * @return ClientModel
  *
  * */
 const handler = async (req, res) => {
@@ -33,26 +31,26 @@ const handler = async (req, res) => {
     }
 
     try {
-        const {query: {id: teamId}} = req;
+        const {query: {id: clientId}} = req;
 
         // object id validation
-        if (!mongoose.Types.ObjectId.isValid(teamId)) {
+        if (!mongoose.Types.ObjectId.isValid(clientId)) {
             return res.status(404).send()
         }
         await connectDB();
 
 
-        const team = await TeamModel.findById(teamId)
+        const client = await ClientModel.findById(clientId)
         // db existence validation
-        if (!team) {
+        if (!client) {
             return res.status(404).send()
         }
 
         // parse the form from FormData
-        const {files, fields} = await FormDataParser(req);
+        const {files} = await FormDataParser(req);
 
 
-        const errors = updateTeamValidator({files, fields});
+        const errors = clientDataValidator({files, create:false});
         // return if error
         if (errors) {
             return res.status(422).send(
@@ -65,17 +63,14 @@ const handler = async (req, res) => {
         }
 
 
-        team.name = fields.name.trim();
-        team.designation = fields.designation.trim();
-
-        const prevId = team.image
+        const prevId = client.image
 
         if (files?.image) {
-            const {public_id} = await upload(files.image, 'team');
-            team.image = public_id;
+            const {public_id} = await upload(files.image, 'clients');
+            client.image = public_id;
         }
 
-        await team.save()
+        await client.save()
 
         // delete previous image if new have
         if (files?.image) {
@@ -84,9 +79,9 @@ const handler = async (req, res) => {
 
         return res.status(201).send(
             Response({
-                data: team,
+                data: client,
                 status_code: 201,
-                message: 'Updated complete!'
+                message: 'Update complete!'
             })
         )
     } catch (e) {

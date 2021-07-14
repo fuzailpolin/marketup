@@ -2,7 +2,7 @@ import connectDB from '../../../../tools/db/connection'
 import WorksModel from '../../../../tools/db/Model/WorksModel'
 import mongoose from 'mongoose'
 import Response from '../../../../tools/Response'
-import cloudinary from '../../../../tools/cloudinary'
+import deleteImage from '../../../../tools/cloudinary/delete'
 
 export const config = {
     api: {
@@ -42,7 +42,7 @@ const handler = async (req, res) => {
 
         await work.delete()
 
-        await cloudinary.v2.uploader.destroy(prevId);
+        await deleteImage(prevId);
 
         return res.status(201).send(
             Response({

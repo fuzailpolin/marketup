@@ -1,7 +1,6 @@
 export const jobData = [
   {
     position: "CONTENT WRITER",
-    slug: "react",
     vacancy: 2,
     jobType: "Full-time Job",
     deadLine: {
@@ -15,7 +14,6 @@ export const jobData = [
   },
   {
     position: "SOCIAL MEDIA PLANNER",
-    slug: "react",
     vacancy: 2,
     jobType: "Full-time Job",
     deadLine: {
@@ -29,7 +27,6 @@ export const jobData = [
   },   
   {
     position: "PRODUCT MANAGER",
-    slug: "react",
     vacancy: 2,
     jobType: "Full-time Job",
     deadLine: {
@@ -43,7 +40,6 @@ export const jobData = [
   },
   {
     position: "GRAPHICS DESIGNER",
-    slug: "react",
     vacancy: 2,
     jobType: "Full-time Job",
     deadLine: {

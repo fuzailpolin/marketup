@@ -1,9 +1,8 @@
 import connectDB from '../../../../tools/db/connection'
-import TeamModel from '../../../../tools/db/Model/TeamModel'
+import HomeSliderModel from '../../../../tools/db/Model/HomeSlider'
 import mongoose from 'mongoose'
 import Response from '../../../../tools/Response'
 import deleteImage from '../../../../tools/cloudinary/delete'
-
 
 export const config = {
     api: {
@@ -26,26 +25,26 @@ const handler = async (req, res) => {
     }
 
     try {
-        const {query: {id: teamId}} = req;
+        const {query: {id: sliderId}} = req;
 
         // object id validation
-        if (!mongoose.Types.ObjectId.isValid(teamId)) {
+        if (!mongoose.Types.ObjectId.isValid(sliderId)) {
             return res.status(404).send()
         }
         await connectDB();
 
-        const team = await TeamModel.findById(teamId)
+        const slide = await HomeSliderModel.findById(sliderId)
         // db existence validation
-        if (!team) {
+        if (!slide) {
             return res.status(404).send()
         }
 
 
-        const prevId = team.image
+        const prevId = slide.image
 
 
         // delete from db
-        await team.delete()
+        await slide.delete()
 
         // delete image form cloudinary
         await deleteImage(prevId);
@@ -54,7 +53,7 @@ const handler = async (req, res) => {
         return res.status(201).send(
             Response({
                 status_code: 200,
-                message: 'Team delete successful!!'
+                message: 'Slide deleted successfully!!'
             })
         )
     } catch (e) {

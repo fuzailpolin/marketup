@@ -1,9 +1,8 @@
 import connectDB from '../../../../tools/db/connection'
-import TeamModel from '../../../../tools/db/Model/TeamModel'
+import ClientModel from '../../../../tools/db/Model/ClientsModel'
 import mongoose from 'mongoose'
 import Response from '../../../../tools/Response'
 import deleteImage from '../../../../tools/cloudinary/delete'
-
 
 export const config = {
     api: {
@@ -26,26 +25,26 @@ const handler = async (req, res) => {
     }
 
     try {
-        const {query: {id: teamId}} = req;
+        const {query: {id: clientId}} = req;
 
         // object id validation
-        if (!mongoose.Types.ObjectId.isValid(teamId)) {
+        if (!mongoose.Types.ObjectId.isValid(clientId)) {
             return res.status(404).send()
         }
         await connectDB();
 
-        const team = await TeamModel.findById(teamId)
+        const client = await ClientModel.findById(clientId)
         // db existence validation
-        if (!team) {
+        if (!client) {
             return res.status(404).send()
         }
 
 
-        const prevId = team.image
+        const prevId = client.image
 
 
         // delete from db
-        await team.delete()
+        await client.delete()
 
         // delete image form cloudinary
         await deleteImage(prevId);
@@ -54,7 +53,7 @@ const handler = async (req, res) => {
         return res.status(201).send(
             Response({
                 status_code: 200,
-                message: 'Team delete successful!!'
+                message: 'Client logo deleted successfully!!'
             })
         )
     } catch (e) {

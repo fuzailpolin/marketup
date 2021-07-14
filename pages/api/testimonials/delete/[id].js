@@ -1,16 +1,13 @@
 import connectDB from '../../../../tools/db/connection'
-import TeamModel from '../../../../tools/db/Model/TeamModel'
+import TestimonialModel from '../../../../tools/db/Model/TestimonialModel'
 import mongoose from 'mongoose'
 import Response from '../../../../tools/Response'
-import deleteImage from '../../../../tools/cloudinary/delete'
-
 
 export const config = {
     api: {
         bodyParser: false
     }
 }
-
 
 /**
  * @method DELETE
@@ -26,35 +23,24 @@ const handler = async (req, res) => {
     }
 
     try {
-        const {query: {id: teamId}} = req;
+        const {query: {id: testimonialId}} = req;
 
-        // object id validation
-        if (!mongoose.Types.ObjectId.isValid(teamId)) {
+        if (!mongoose.Types.ObjectId.isValid(testimonialId)) {
             return res.status(404).send()
         }
         await connectDB();
 
-        const team = await TeamModel.findById(teamId)
-        // db existence validation
-        if (!team) {
+        const testimonial = await TestimonialModel.findById(testimonialId)
+        if (!testimonial) {
             return res.status(404).send()
         }
 
-
-        const prevId = team.image
-
-
-        // delete from db
-        await team.delete()
-
-        // delete image form cloudinary
-        await deleteImage(prevId);
-
+        await testimonial.delete()
 
         return res.status(201).send(
             Response({
                 status_code: 200,
-                message: 'Team delete successful!!'
+                message: 'Testimonial deleted successfully!!'
             })
         )
     } catch (e) {
@@ -68,6 +54,5 @@ const handler = async (req, res) => {
 
 
 }
-
 
 export default handler
