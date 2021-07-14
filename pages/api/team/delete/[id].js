@@ -2,7 +2,8 @@ import connectDB from '../../../../tools/db/connection'
 import TeamModel from '../../../../tools/db/Model/TeamModel'
 import mongoose from 'mongoose'
 import Response from '../../../../tools/Response'
-import cloudinary from '../../../../tools/cloudinary'
+import deleteImage from '../../../../tools/cloudinary/delete'
+
 
 export const config = {
     api: {
@@ -47,7 +48,7 @@ const handler = async (req, res) => {
         await team.delete()
 
         // delete image form cloudinary
-        await cloudinary.v2.uploader.destroy(prevId);
+        await deleteImage(prevId);
 
 
         return res.status(201).send(

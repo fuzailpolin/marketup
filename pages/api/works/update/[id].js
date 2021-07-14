@@ -5,7 +5,7 @@ import FormDataParser from '../../../../tools/FormDataParser'
 import WorksUpdateValidator from '../../../../tools/validators/works/workUpdateValidator'
 import upload from '../../../../tools/cloudinary/upload'
 import Response from '../../../../tools/Response'
-import cloudinary from '../../../../tools/cloudinary'
+import deleteImage from '../../../../tools/cloudinary/delete'
 
 export const config = {
     api: {
@@ -80,7 +80,7 @@ const handler = async (req, res) => {
 
         // delete previous image if new have
         if (files?.image) {
-            await cloudinary.v2.uploader.destroy(prevId);
+            await deleteImage(prevId);
         }
 
         return res.status(201).send(
