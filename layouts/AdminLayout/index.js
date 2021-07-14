@@ -8,13 +8,9 @@ const AdminLayout = ({children}) => {
     const miniMenu = useRef(null)
     const sidebar = useRef(null)
     const router = useRouter();
-    const [show, setShow] = useState(false)
+    const [show, setShow] = useState(true)
 
-    useEffect(() => {
-        setTimeout(() => {
-            setShow(true)
-        }, 1000)
-    }, [])
+
 
 
     const [down, setDown] = useState(true)
