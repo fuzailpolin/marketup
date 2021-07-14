@@ -1,6 +1,15 @@
 const cloudinary = require('./index')
 const datauri = require('datauri')
 
+
+/**
+ *
+ * @param file File
+ * @param folder String
+ *
+ * @return {public_id, ...}
+ *
+ * */
 module.exports = (file, folder) => {
     return new Promise((resolve, reject) => {
         datauri(file.path).then(bs => {

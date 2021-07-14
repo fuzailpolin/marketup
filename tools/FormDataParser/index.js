@@ -1,5 +1,13 @@
 const Formidable = require('formidable')
 
+
+/**
+ *
+ * @param req :Request
+ *
+ * @return {files, fields}
+ *
+ * */
 module.exports = (req) => (
     new Promise((resolve, reject) => {
         const form = new Formidable({multiples: true})

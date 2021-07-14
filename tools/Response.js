@@ -1,3 +1,14 @@
+
+/**
+ *
+ * @param data :any
+ * @param errors :any
+ * @param status_code :int
+ * @param message :String
+ *
+ * @return {data, errors, status_code, message}
+ *
+ * */
 const Response = ({data, errors, status_code, message}) => (
     {
         data: data || null,
