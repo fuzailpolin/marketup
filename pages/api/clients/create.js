@@ -46,7 +46,7 @@ export default async (req, res) => {
             }))
         }
 
-        const { public_id } =await upload(files.image, 'team')
+        const { public_id } =await upload(files.image, 'clients')
 
         // save data to db
         const clients = await ClientModel.create({

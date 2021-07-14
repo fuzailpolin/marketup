@@ -47,12 +47,10 @@ const handler = async (req, res) => {
         }
 
         // parse the form from FormData
-        console.log(client)
         const {files} = await FormDataParser(req);
 
 
         const errors = clientDataValidator({files, create:false});
-        console.log(errors)
         // return if error
         if (errors) {
             return res.status(422).send(
@@ -68,7 +66,7 @@ const handler = async (req, res) => {
         const prevId = client.image
 
         if (files?.image) {
-            const {public_id} = await upload(files.image, 'team');
+            const {public_id} = await upload(files.image, 'clients');
             client.image = public_id;
         }
 
