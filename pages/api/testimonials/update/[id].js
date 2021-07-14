@@ -1,11 +1,9 @@
 import connectDB from '../../../../tools/db/connection'
-import ClientModel from '../../../../tools/db/Model/ClientsModel'
+import TestimonialModel from '../../../../tools/db/Model/TestimonialModel'
 import mongoose from 'mongoose'
 import FormDataParser from '../../../../tools/FormDataParser'
-import upload from '../../../../tools/cloudinary/upload'
-import clientDataValidator from '../../../../tools/validators/clients/clientDataValidator'
+import testimonialDataValidator from '../../../../tools/validators/testimonials/testimonialDataValidator'
 import Response from '../../../../tools/Response'
-import cloudinary from '../../../../tools/cloudinary'
 
 export const config = {
     api: {
@@ -19,9 +17,12 @@ export const config = {
  *
  * @requires FromData
  *
- * @param image File image/png, image/jpg, image/jpeg
+ * @param name String
+ * @param text String
+ * @param designation String
+ * @param company String
  *
- * @return ClientModel
+ * @return TestimonialModel
  *
  * */
 const handler = async (req, res) => {
@@ -31,55 +32,48 @@ const handler = async (req, res) => {
     }
 
     try {
-        const {query: {id: clientId}} = req;
+        const {query: {id: testimonialId}} = req;
 
         // object id validation
-        if (!mongoose.Types.ObjectId.isValid(clientId)) {
+        if (!mongoose.Types.ObjectId.isValid(testimonialId)) {
             return res.status(404).send()
         }
         await connectDB();
 
 
-        const client = await ClientModel.findById(clientId)
+        const testimonial = await TestimonialModel.findById(testimonialId)
         // db existence validation
-        if (!client) {
+        if (!testimonial) {
             return res.status(404).send()
         }
 
         // parse the form from FormData
-        const {files} = await FormDataParser(req);
+        const {fields} = await FormDataParser(req);
 
 
-        const errors = clientDataValidator({files, create:false});
+        const errors = testimonialDataValidator({fields});
         // return if error
         if (errors) {
             return res.status(422).send(
                 Response({
                     errors,
                     status_code: 422,
-                    message: 'Invalid input!'
+                    message: 'Invalid inputs!'
                 })
             )
         }
+        
+        //alter data if any updated
+        testimonial.name = fields.name.trim();
+        testimonial.designation = fields.designation.trim();
+        testimonial.company = fields.company.trim();
+        testimonial.text = fields.text.trim();
 
-
-        const prevId = client.image
-
-        if (files?.image) {
-            const {public_id} = await upload(files.image, 'clients');
-            client.image = public_id;
-        }
-
-        await client.save()
-
-        // delete previous image if new have
-        if (files?.image) {
-            await cloudinary.v2.uploader.destroy(prevId);
-        }
+        await testimonial.save()
 
         return res.status(201).send(
             Response({
-                data: client,
+                data: testimonial,
                 status_code: 201,
                 message: 'Update complete!'
             })

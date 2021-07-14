@@ -1,12 +1,10 @@
 import FormDataParser from '../../../tools/FormDataParser'
-import upload from '../../../tools/cloudinary/upload'
-import ClientModel from '../../../tools/db/Model/ClientsModel'
+import TestimonialModel from '../../../tools/db/Model/TestimonialModel'
 import connectDB from '../../../tools/db/connection'
 import Response from '../../../tools/Response'
 
 // import validators
-import clientDataValidator from '../../../tools/validators/clients/clientDataValidator'
-
+import testimonialDataValidator from '../../../tools/validators/testimonials/testimonialDataValidator'
 
 export const config = {
     api: {
@@ -14,50 +12,53 @@ export const config = {
     }
 }
 
-
 /**
  * @method POST
  *
  * @requires FromData
-
- * @param image File image/png, image/jpg, image/jpeg
  *
- * @return ClientModel
+ * @param name String
+ * @param designation String
+ * @param text String
+ * @param company String
+ *
+ * @return TestimonialModel
  *
  * */
 export default async (req, res) => {
     const { method } = req;
 
     if(method != 'POST'){
-        return res.send( method + " method is not allowed!")
+        return res.status(404).send()
     }
 
     try{
         await connectDB();
-        const {files} = await FormDataParser(req)
-        // const create = true;
-        const errors = clientDataValidator({files, create:true});
+        const {fields} = await FormDataParser(req)
+
+        const errors = testimonialDataValidator({fields})
 
         if(errors){
             return res.status(422).send(Response({
                 status_code: 422,
                 errors,
-                message: 'Invalid input!'
+                message: 'Invalid inputs!'
             }))
         }
 
-        const { public_id } =await upload(files.image, 'clients')
-
         // save data to db
-        const clients = await ClientModel.create({
-            image: public_id
+        const testimonial = await TestimonialModel.create({
+            name: fields?.name?.trim(),
+            designation: fields?.designation?.trim(),
+            company: fields?.company?.trim(),
+            text: fields?.text?.trim()
         })
 
         // return to client
         return res.status(201).send(
             Response({
-                data: clients,
-                message: 'New client logo added!',
+                data: testimonial,
+                message: 'New testimonial added!',
                 status_code: 201
             })
         )

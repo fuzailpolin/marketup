@@ -87,7 +87,7 @@ const handler = async (req, res) => {
             Response({
                 data: work,
                 status_code: 201,
-                message: 'Updated complete!'
+                message: 'Update complete!'
             })
         )
     } catch (e) {

@@ -1,4 +1,3 @@
-import TestimonialCard from "../../../Cards/TestimonialCard";
 import TestimonialSlider from "../../../Slider/TestimonialSlider";
 
 const data = [
