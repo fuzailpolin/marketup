@@ -1,8 +1,7 @@
-import { useRef, useState } from "react";
-import { useRouter } from "next/router";
+import {useRef, useState} from "react";
+import {useRouter} from "next/router";
 import Link from 'next/link'
-import { FaAngleDown, FaAngleUp, FaBookOpen, FaBars } from 'react-icons/fa'
-
+import {FaAngleDown, FaAngleUp, FaBookOpen, FaBars} from 'react-icons/fa'
 
 
 const AdminLayout = ({children}) => {
@@ -12,22 +11,19 @@ const AdminLayout = ({children}) => {
     const [show, setShow] = useState(true)
 
 
-
-
     const [down, setDown] = useState(true)
 
     const toggleNav = () => {
-        if(sidebar.current.classList.contains('openNav')){
+        if (sidebar.current.classList.contains('openNav')) {
             sidebar.current.classList.remove('openNav')
             sidebar.current.classList.add('closeNav')
 
-        }else{
+        } else {
             sidebar.current.classList.remove('closeNav')
             sidebar.current.classList.add('openNav')
 
         }
     }
-
 
 
     const toggleMenu = () => {
@@ -43,7 +39,7 @@ const AdminLayout = ({children}) => {
     }
 
 
-    if(!show){
+    if (!show) {
         return <div></div>
     }
 
@@ -81,7 +77,7 @@ const AdminLayout = ({children}) => {
                     <li className="my-2 md:my-0">
                         <Link href={'/dashboard/works'}>
                             <a
-                               className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
+                                className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
 
                                 <FaBookOpen className={'inline'}/>
 
@@ -92,14 +88,15 @@ const AdminLayout = ({children}) => {
                     </li>
 
                     <li className="my-2 md:my-0">
-                        <a href="#"
-                           className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
+                        <Link href={'/dashboard/clients'}>
+                            <a className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
 
-                            <FaBookOpen className={'inline'}/>
+                                <FaBookOpen className={'inline'}/>
 
-                            <span className="block pl-2 md:pb-0 text-sm left-10">Clients</span>
+                                <span className="block pl-2 md:pb-0 text-sm left-10">Clients</span>
 
-                        </a>
+                            </a>
+                        </Link>
                     </li>
 
 
@@ -161,7 +158,7 @@ const AdminLayout = ({children}) => {
 
                         <div className="flex h-full justify-between items-center">
                             <button onClick={toggleNav} className={'focus:outline-none pl-2'}>
-                                <FaBars size={28} />
+                                <FaBars size={28}/>
                             </button>
 
                             <div className="flex relative inline-block">
@@ -170,7 +167,7 @@ const AdminLayout = ({children}) => {
                                     <button onClick={toggleMenu} className="flex items-center focus:outline-none mr-3">
                                         <span className="block mr-2">Hi, User </span>
                                         {
-                                            down ? <FaAngleDown /> : <FaAngleUp />
+                                            down ? <FaAngleDown/> : <FaAngleUp/>
                                         }
 
 
