@@ -1,5 +1,6 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { useRouter } from "next/router";
+import Link from 'next/link'
 import { FaAngleDown, FaAngleUp, FaBookOpen, FaBars } from 'react-icons/fa'
 
 
@@ -65,25 +66,29 @@ const AdminLayout = ({children}) => {
                     </li>
 
                     <li className="my-2 md:my-0">
-                        <a href="#"
-                           className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
+                        <Link href={'/dashboard/teams'}>
+                            <a className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
 
-                            <FaBookOpen className={'inline'}/>
+                                <FaBookOpen className={'inline'}/>
 
-                            <span className="block pl-2 md:pb-0 text-sm left-10">Teams</span>
+                                <span className="block pl-2 md:pb-0 text-sm left-10">Teams</span>
 
-                        </a>
+                            </a>
+                        </Link>
+
                     </li>
 
                     <li className="my-2 md:my-0">
-                        <a href="#"
-                           className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
+                        <Link href={'/dashboard/works'}>
+                            <a
+                               className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
 
-                            <FaBookOpen className={'inline'}/>
+                                <FaBookOpen className={'inline'}/>
 
-                            <span className="block pl-2 md:pb-0 text-sm left-10">Works</span>
+                                <span className="block pl-2 md:pb-0 text-sm left-10">Works</span>
 
-                        </a>
+                            </a>
+                        </Link>
                     </li>
 
                     <li className="my-2 md:my-0">

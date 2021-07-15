@@ -2,20 +2,20 @@ import AdminLayout from "../../../layouts/AdminLayout";
 import {useEffect, useState, useRef} from "react";
 import axiosGet from "../../../frontend/helpers/axiosGet";
 import axiosDelete from "../../../frontend/helpers/axiosDelete";
-import TeamCard from "../../../components/Cards/TeamCard";
 import Modal from 'react-modal'
 import {BiLoaderCircle} from 'react-icons/bi';
 import axiosPost from "../../../frontend/helpers/axiosPost";
+import {Image, Transformation} from "cloudinary-react";
 
 
 const Teams = () => {
-    const [teamMembers, setTeamMembers] = useState(null)
+    const [works, setWorks] = useState(null)
 
     const createForm = useRef(null)
 
     const [createTeamForm, setCrateTeamForm] = useState({
-        name: '',
-        designation: '',
+        company: '',
+        work: '',
         image: '',
         loading: false,
         show: false,
@@ -25,8 +25,8 @@ const Teams = () => {
     const openCreateModal = () => {
         createForm?.current?.reset()
         setCrateTeamForm({
-            name: '',
-            designation: '',
+            company: '',
+            work: '',
             image: '',
             loading: false,
             show: true,
@@ -56,14 +56,14 @@ const Teams = () => {
             errors: {}
         })
         const form = new FormData();
-        form.append('name', createTeamForm.name || '')
-        form.append('designation', createTeamForm.designation || '')
+        form.append('company', createTeamForm.company || '')
+        form.append('work', createTeamForm.work || '')
         form.append('image', createTeamForm.image || '')
 
-        axiosPost('/api/team/create', form, {})
+        axiosPost('/api/works/create', form, {})
             .then(response => {
-                setTeamMembers([
-                    ...teamMembers,
+                setWorks([
+                    ...works,
                     response.data
                 ])
                 setCrateTeamForm({
@@ -92,12 +92,12 @@ const Teams = () => {
     Modal.setAppElement('#__next');
 
 
-    const getAllTeams = async () => {
+    const getAllWorks = async () => {
         try {
-            const allTeam = await axiosGet('/api/team')
-            setTeamMembers(allTeam.data)
+            const AllWorks = await axiosGet('/api/works')
+            setWorks(AllWorks.data)
         } catch (e) {
-            setTeamMembers([])
+            setWorks([])
         }
     }
 
@@ -109,7 +109,7 @@ const Teams = () => {
         setDeleteModal({
             ...deleteModal, loading: true
         });
-        axiosDelete('/api/team/delete/' + deleteModal.deleteId)
+        axiosDelete('/api/works/delete/' + deleteModal.deleteId)
             .then(res => {
 
                 setDeleteModal({
@@ -117,7 +117,7 @@ const Teams = () => {
                     deleteId: null,
                     loading: false
                 })
-                getAllTeams()
+                getAllWorks()
             })
             .catch(err => {
 
@@ -126,19 +126,19 @@ const Teams = () => {
                     deleteId: null,
                     loading: false
                 })
-                getAllTeams()
+                getAllWorks()
             })
     }
 
     useEffect(() => {
 
-        getAllTeams()
+        getAllWorks()
 
     }, [])
 
     return (
         <AdminLayout>
-            <h2 className={'text-center text-gray-700 text-poppins text-lg text-bold pb-5'}>Dashboard / Teams</h2>
+            <h2 className={'text-center text-gray-700 text-poppins text-lg text-bold pb-5'}>Dashboard / Works</h2>
 
 
             {/* delete modal */}
@@ -179,18 +179,18 @@ const Teams = () => {
                 <h2 className={'px-2 text-gray-800 pb-2 text-base font-bold text-center'}>Create New Member!</h2>
                 <form ref={createForm}>
                     <div className="py-2">
-                        <label className={'block text-gray-600'}>Name:</label>
-                        <input onChange={changeCreateTeamFormValue} placeholder={'Name'} name={'name'} type="text"
+                        <label className={'block text-gray-600'}>Company Name:</label>
+                        <input onChange={changeCreateTeamFormValue} placeholder={'Company'} name={'company'} type="text"
                                className={'block w-full rounded border-gray-800 px-1 py-1 border focus:outline-none'}/>
-                        <p className={'text-sm text-red-600 pl-1'}>{createTeamForm.errors?.name}</p>
+                        <p className={'text-sm text-red-600 pl-1'}>{createTeamForm.errors?.company}</p>
                     </div>
 
                     <div className="py-2">
-                        <label className={'block text-gray-600'}>Designation:</label>
-                        <input onChange={changeCreateTeamFormValue} placeholder={'Designation'} name={'designation'}
+                        <label className={'block text-gray-600'}>Work:</label>
+                        <input onChange={changeCreateTeamFormValue} placeholder={'Work'} name={'work'}
                                type="text"
                                className={'block w-full rounded border-gray-800 px-1 py-1 border focus:outline-none'}/>
-                        <p className={'text-sm text-red-600 pl-1'}>{createTeamForm.errors?.designation}</p>
+                        <p className={'text-sm text-red-600 pl-1'}>{createTeamForm.errors?.work}</p>
                     </div>
 
                     <div className="py-2">
@@ -227,28 +227,37 @@ const Teams = () => {
 
             {/*display section start*/}
 
-            <div className="grid grid-cols-12 bg-gray-700 pb-8 mb-8">
+            <div className="grid grid-cols-12 px-2 gap-5 bg-gray-700 pb-8 mb-8">
                 <div className="col-span-12 py-5">
                     <button
                         onClick={openCreateModal}
-                        className={'py-1 ml-4 px-3 shadow-lg focus:outline-none rounded text-black  text-center bg-white text-blue-500'}>Add New Member
+                        className={'py-1 ml-4 px-3 shadow-lg focus:outline-none rounded text-black  text-center bg-white text-blue-500'}>Add New Work
                     </button>
                 </div>
                 {
-                    teamMembers?.length ?
-                        teamMembers.map(team => {
+                    works?.length ?
+                        works.map(work => {
                             return (
-                                <div key={team._id} className="col-span-12 md:col-span-6 lg:col-span-4 mx-4">
-                                    <TeamCard
-                                        image={team.image}
-                                        name={team.name}
-                                        designation={team.designation}
-                                    />
+                                <div key={work._id} className="col-span-12 md:col-span-6 lg:col-span-4">
+                                    <div className={'relative overflow-hidden h-56  xx'}>
+
+                                        <Image className={'w-full absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2'} cloudName="dmkch2bnk" publicId={work.image}>
+                                            <Transformation width="400"  gravity="south" crop="fill" />
+                                        </Image>
+
+                                        <div className={'absolute transition duration-300 md:opacity-100 -bottom-0 -left-0 bg-black bg-opacity-60 w-full'}>
+                                            <p className={'uppercase text-left pl-2 font-semibold font-mons text-white'}>{work.company}</p>
+                                            <p className={'uppercase l text-xs text-left  pl-2 py-1  font-medium  font-mons text-white'}>{work.work}</p>
+                                        </div>
+
+
+
+                                    </div>
 
                                     <div className={'flex justify-around py-3'}>
-                                       <button onClick={() => setDeleteModal({
+                                        <button onClick={() => setDeleteModal({
                                             show: true,
-                                            deleteId: team._id,
+                                            deleteId: work._id,
                                             loading: false
                                         })}
                                                 className={'py-1 w-1/2 mx-2 focus:outline-none rounded bg-red-500 text-black text-center'}>Delete
@@ -261,7 +270,7 @@ const Teams = () => {
                         })
                         :
 
-                            teamMembers?.length == 0 ? (<div className="col-span-12 text-center py-10 text-xl font-bold text-white">No Data !</div>)  : null
+                        works?.length == 0 ? (<div className="col-span-12 text-center py-10 text-xl font-bold text-white">No Data !</div>)  : null
 
 
                 }

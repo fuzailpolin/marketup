@@ -36,6 +36,8 @@ export default async (req, res) => {
         await connectDB();
         const {files, fields} = await FormDataParser(req)
 
+        console.log(fields, files)
+
         const errors = worksDataValidator({files, fields})
 
         if(errors){
