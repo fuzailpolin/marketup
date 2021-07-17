@@ -267,7 +267,7 @@ const Teams = () => {
                     partners?.length ?
                         partners.map(partner => {
                             return (
-                                <div key={partner._id} className={'m-1 border-2 border-white rounded'}>
+                                <div key={partner._id} className={'m-2 p-2 shadow-lg bg-gray-500  rounded'}>
                                     <PartnershipCard
                                         companyLogo={partner.company_logo}
                                         image={partner.image}
