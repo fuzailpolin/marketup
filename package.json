@@ -30,5 +30,6 @@
     "autoprefixer": "^9",
     "postcss": "^7",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
-  }
+  },
+  "license" : "(ISC OR GPL-3.0)"
 }
