@@ -16,7 +16,7 @@ export default async (req, res) => {
 
     try{
         await connectDB();
-        const partners = await PartnershipModel.find({})
+        const partners = await PartnershipModel.find({}).sort({'created_at': '-1'})
         res.send(
             Response({
                 data: partners

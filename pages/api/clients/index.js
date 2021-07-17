@@ -17,7 +17,7 @@ export default async (req, res) => {
 
     try{
         await connectDB();
-        const clients = await ClientModel.find({})
+        const clients = await ClientModel.find({}).sort({'created_at': '-1'})
         res.send(
             Response({
                 data: clients

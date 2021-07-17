@@ -16,7 +16,7 @@ export default async (req, res) => {
 
     try{
         await connectDB();
-        const jobs = await JobsModel.find({})
+        const jobs = await JobsModel.find({}).sort({'created_at': '-1'})
         res.send(
             Response({
                 status_code: 200,

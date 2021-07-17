@@ -1,36 +1,29 @@
-import { useRef, useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import { FaAngleDown, FaAngleUp, FaBookOpen, FaBars } from 'react-icons/fa'
-
+import {useRef, useState} from "react";
+import {useRouter} from "next/router";
+import Link from 'next/link'
+import {FaAngleDown, FaAngleUp, FaBookOpen, FaBars} from 'react-icons/fa'
 
 
 const AdminLayout = ({children}) => {
     const miniMenu = useRef(null)
     const sidebar = useRef(null)
     const router = useRouter();
-    const [show, setShow] = useState(false)
-
-    useEffect(() => {
-        setTimeout(() => {
-            setShow(true)
-        }, 1000)
-    }, [])
+    const [show, setShow] = useState(true)
 
 
     const [down, setDown] = useState(true)
 
     const toggleNav = () => {
-        if(sidebar.current.classList.contains('openNav')){
+        if (sidebar.current.classList.contains('openNav')) {
             sidebar.current.classList.remove('openNav')
             sidebar.current.classList.add('closeNav')
 
-        }else{
+        } else {
             sidebar.current.classList.remove('closeNav')
             sidebar.current.classList.add('openNav')
 
         }
     }
-
 
 
     const toggleMenu = () => {
@@ -46,7 +39,7 @@ const AdminLayout = ({children}) => {
     }
 
 
-    if(!show){
+    if (!show) {
         return <div></div>
     }
 
@@ -69,71 +62,95 @@ const AdminLayout = ({children}) => {
                     </li>
 
                     <li className="my-2 md:my-0">
-                        <a href="#"
-                           className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
+                        <Link href={'/dashboard/teams'}>
+                            <a className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
 
-                            <FaBookOpen className={'inline'}/>
+                                <FaBookOpen className={'inline'}/>
 
-                            <span className="block pl-2 md:pb-0 text-sm left-10">Teams</span>
+                                <span className="block pl-2 md:pb-0 text-sm left-10">Teams</span>
 
-                        </a>
+                            </a>
+                        </Link>
+
                     </li>
 
                     <li className="my-2 md:my-0">
-                        <a href="#"
-                           className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
+                        <Link href={'/dashboard/works'}>
+                            <a
+                                className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
 
-                            <FaBookOpen className={'inline'}/>
+                                <FaBookOpen className={'inline'}/>
 
-                            <span className="block pl-2 md:pb-0 text-sm left-10">Works</span>
+                                <span className="block pl-2 md:pb-0 text-sm left-10">Works</span>
 
-                        </a>
+                            </a>
+                        </Link>
                     </li>
 
                     <li className="my-2 md:my-0">
-                        <a href="#"
-                           className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
+                        <Link href={'/dashboard/clients'}>
+                            <a className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
 
-                            <FaBookOpen className={'inline'}/>
+                                <FaBookOpen className={'inline'}/>
 
-                            <span className="block pl-2 md:pb-0 text-sm left-10">Clients</span>
+                                <span className="block pl-2 md:pb-0 text-sm left-10">Clients</span>
 
-                        </a>
-                    </li>
-
-
-                    <li className="my-2 md:my-0">
-                        <a href="#"
-                           className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
-
-                            <FaBookOpen className={'inline'}/>
-
-                            <span className="block pl-2 md:pb-0 text-sm left-10">Testimonials</span>
-
-                        </a>
+                            </a>
+                        </Link>
                     </li>
 
 
                     <li className="my-2 md:my-0">
-                        <a href="#"
-                           className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
+                        <Link href={'/dashboard/testimonials'}>
+                            <a
+                                className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
 
-                            <FaBookOpen className={'inline'}/>
+                                <FaBookOpen className={'inline'}/>
 
-                            <span className="block pl-2 md:pb-0 text-sm left-10">Partnership</span>
+                                <span className="block pl-2 md:pb-0 text-sm left-10">Testimonials</span>
 
-                        </a>
+                            </a>
+                        </Link>
+                    </li>
+
+
+                    <li className="my-2 md:my-0">
+                        <Link href={'/dashboard/partner'}>
+                            <a
+                                className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
+
+                                <FaBookOpen className={'inline'}/>
+
+                                <span className="block pl-2 md:pb-0 text-sm left-10">Partnership</span>
+
+                            </a>
+                        </Link>
                     </li>
 
                     <li className="my-2 md:my-0">
-                        <a href="#"
-                           className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
+                        <Link href={'/dashboard/jobs'}>
+                            <a
+                                className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
 
-                            <FaBookOpen className={'inline'}/>
+                                <FaBookOpen className={'inline'}/>
 
-                            <span className="block pl-2 md:pb-0 text-sm left-10">Job</span>
+                                <span className="block pl-2 md:pb-0 text-sm left-10">Job</span>
 
-                        </a>
+                            </a>
+                        </Link>
+                    </li>
+
+                    <li className="my-2 md:my-0">
+                        <Link href={'/dashboard/home_slider'}>
+                            <a
+                                className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
+
+                                <FaBookOpen className={'inline'}/>
+
+                                <span className="block pl-2 md:pb-0 text-sm left-10">Home Slider</span>
+
+                            </a>
+                        </Link>
                     </li>
 
 
@@ -160,7 +177,7 @@ const AdminLayout = ({children}) => {
 
                         <div className="flex h-full justify-between items-center">
                             <button onClick={toggleNav} className={'focus:outline-none pl-2'}>
-                                <FaBars size={28} />
+                                <FaBars size={28}/>
                             </button>
 
                             <div className="flex relative inline-block">
@@ -169,7 +186,7 @@ const AdminLayout = ({children}) => {
                                     <button onClick={toggleMenu} className="flex items-center focus:outline-none mr-3">
                                         <span className="block mr-2">Hi, User </span>
                                         {
-                                            down ? <FaAngleDown /> : <FaAngleUp />
+                                            down ? <FaAngleDown/> : <FaAngleUp/>
                                         }
 
 
