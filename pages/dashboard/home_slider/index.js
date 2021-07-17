@@ -5,19 +5,16 @@ import axiosDelete from "../../../frontend/helpers/axiosDelete";
 import Modal from 'react-modal'
 import {BiLoaderCircle} from 'react-icons/bi';
 import axiosPost from "../../../frontend/helpers/axiosPost";
-import TestimonialCard from "../../../components/Cards/TestimonialCard";
+import {Image, Transformation} from "cloudinary-react";
 
 
 const Teams = () => {
-    const [testimonials, setTestimonials] = useState(null)
+    const [sliders, setSliders] = useState(null)
 
     const createForm = useRef(null)
 
     const [createTeamForm, setCrateTeamForm] = useState({
-        name: '',
-        designation: '',
-        company: '',
-        text: '',
+        image: '',
         loading: false,
         show: false,
         errors: {}
@@ -26,10 +23,7 @@ const Teams = () => {
     const openCreateModal = () => {
         createForm?.current?.reset()
         setCrateTeamForm({
-            name: '',
-            designation: '',
-            company: '',
-            text: '',
+            image: '',
             loading: false,
             show: true,
             errors: {}
@@ -58,15 +52,12 @@ const Teams = () => {
             errors: {}
         })
         const form = new FormData();
-        form.append('name', createTeamForm.name || '')
-        form.append('designation', createTeamForm.designation || '')
-        form.append('company', createTeamForm.company || '')
-        form.append('text', createTeamForm.text || '')
+        form.append('image', createTeamForm.image || '')
 
-        axiosPost('/api/testimonials/create', form, {})
+        axiosPost('/api/home_slider/create', form, {})
             .then(response => {
-                setTestimonials([
-                    ...testimonials,
+                setSliders([
+                    ...sliders,
                     response.data
                 ])
                 setCrateTeamForm({
@@ -95,12 +86,12 @@ const Teams = () => {
     Modal.setAppElement('#__next');
 
 
-    const getAllTestimonials = async () => {
+    const getAllSliders = async () => {
         try {
-            const allTestimonials = await axiosGet('/api/testimonials')
-            setTestimonials(allTestimonials.data)
+            const allSliders = await axiosGet('/api/home_slider')
+            setSliders(allSliders.data)
         } catch (e) {
-            setTestimonials([])
+            setSliders([])
         }
     }
 
@@ -112,7 +103,7 @@ const Teams = () => {
         setDeleteModal({
             ...deleteModal, loading: true
         });
-        axiosDelete('/api/testimonials/delete/' + deleteModal.deleteId)
+        axiosDelete('/api/home_slider/delete/' + deleteModal.deleteId)
             .then(res => {
 
                 setDeleteModal({
@@ -120,7 +111,7 @@ const Teams = () => {
                     deleteId: null,
                     loading: false
                 })
-                getAllTestimonials()
+                getAllSliders()
             })
             .catch(err => {
 
@@ -129,19 +120,19 @@ const Teams = () => {
                     deleteId: null,
                     loading: false
                 })
-                getAllTestimonials()
+                getAllSliders()
             })
     }
 
     useEffect(() => {
 
-        getAllTestimonials()
+        getAllSliders()
 
     }, [])
 
     return (
         <AdminLayout>
-            <h2 className={'text-center text-gray-700 text-poppins text-lg text-bold pb-5'}>Dashboard / Testimonials</h2>
+            <h2 className={'text-center text-gray-700 text-poppins text-lg text-bold pb-5'}>Dashboard / Home Slider</h2>
 
 
             {/* delete modal */}
@@ -182,37 +173,13 @@ const Teams = () => {
                 <h2 className={'px-2 text-gray-800 pb-2 text-base font-bold text-center'}>Create New Member!</h2>
                 <form ref={createForm}>
                     <div className="py-2">
-                        <label className={'block text-gray-600'}>Name:</label>
-                        <input onChange={changeCreateTeamFormValue} placeholder={'Name'} name={'name'} type="text"
+                        <label className={'block text-gray-600'}>Image:</label>
+                        <input onChange={changeCreateTeamFormValue} placeholder={'Image'} name={'image'}
+                               type="file"
+                               accept={'image/png, image/jpg, image/jpeg, image/gif'}
                                className={'block w-full rounded border-gray-800 px-1 py-1 border focus:outline-none'}/>
-                        <p className={'text-sm text-red-600 pl-1'}>{createTeamForm.errors?.name}</p>
+                        <p className={'text-sm text-red-600 pl-1'}>{createTeamForm.errors?.image}</p>
                     </div>
-
-                    <div className="py-2">
-                        <label className={'block text-gray-600'}>Company:</label>
-                        <input onChange={changeCreateTeamFormValue} placeholder={'Company'} name={'company'}
-                               type="text"
-                               className={'block w-full rounded border-gray-800 px-1 py-1 border focus:outline-none'}/>
-                        <p className={'text-sm text-red-600 pl-1'}>{createTeamForm.errors?.company}</p>
-                    </div>
-
-                    <div className="py-2">
-                        <label className={'block text-gray-600'}>Designation:</label>
-                        <input onChange={changeCreateTeamFormValue} placeholder={'Designation'} name={'designation'}
-                               type="text"
-                               className={'block w-full rounded border-gray-800 px-1 py-1 border focus:outline-none'}/>
-                        <p className={'text-sm text-red-600 pl-1'}>{createTeamForm.errors?.designation}</p>
-                    </div>
-
-                    <div className="py-2">
-                        <label className={'block text-gray-600'}>Review:</label>
-                        <textarea onChange={changeCreateTeamFormValue} placeholder={'Write review..'} name={'text'}
-                               className={'block w-full rounded border-gray-800 px-1 py-1 border focus:outline-none'}/>
-                        <p className={'text-sm text-red-600 pl-1'}>{createTeamForm.errors?.text}</p>
-                    </div>
-
-
-
                 </form>
 
                 <div className={'flex justify-center py-3'}>
@@ -243,25 +210,24 @@ const Teams = () => {
                 <div className="py-5">
                     <button
                         onClick={openCreateModal}
-                        className={'py-1 ml-4 px-3 shadow-lg focus:outline-none rounded text-black  text-center bg-white text-blue-500'}>Add New Testimonial
+                        className={'py-1 ml-4 px-3 shadow-lg focus:outline-none rounded text-black  text-center bg-white text-blue-500'}>Add New Slider
                     </button>
                 </div>
                 {
-                    testimonials?.length ?
-                        testimonials.map(testimonial => {
+                    sliders?.length ?
+                        sliders.map(slider => {
                             return (
-                                <div key={testimonial._id} className={'m-2 bg-gray-600 shadow-lg rounded'}>
-                                    <TestimonialCard
-                                        designation={testimonial.designation}
-                                        text={testimonial.text}
-                                        company={testimonial.company}
-                                        name={testimonial.name}
-                                    />
+                                <div key={slider._id} className={'m-1 bg-gray-500 rounded'}>
+                                    <div className="h-30vh md:h-70vh p-1 overflow-hidden">
+                                        <Image className={'w-full object-cover  h-full object-center'} cloudName="dmkch2bnk" publicId={slider.image}>
+                                            <Transformation width={1500}  gravity="south" crop="fill" />
+                                        </Image>
+                                    </div>
 
                                     <div className={'flex justify-around py-3'}>
-                                       <button onClick={() => setDeleteModal({
+                                        <button onClick={() => setDeleteModal({
                                             show: true,
-                                            deleteId: testimonial._id,
+                                            deleteId: slider._id,
                                             loading: false
                                         })}
                                                 className={'py-1 w-1/2 mx-2 focus:outline-none rounded bg-red-500 text-black text-center'}>Delete
@@ -274,7 +240,7 @@ const Teams = () => {
                         })
                         :
 
-                            testimonials?.length == 0 ? (<div className="col-span-12 text-center py-10 text-xl font-bold text-white">No Data !</div>)  : null
+                        sliders?.length == 0 ? (<div className="col-span-12 text-center py-10 text-xl font-bold text-white">No Data !</div>)  : null
 
 
                 }

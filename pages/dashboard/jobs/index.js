@@ -148,7 +148,7 @@ const Teams = () => {
 
     return (
         <AdminLayout>
-            <h2 className={'text-center text-gray-700 text-poppins text-lg text-bold pb-5'}>Dashboard / Testimonials</h2>
+            <h2 className={'text-center text-gray-700 text-poppins text-lg text-bold pb-5'}>Dashboard / Careers</h2>
 
 
             {/* delete modal */}

@@ -17,7 +17,7 @@ export default async (req, res) => {
 
     try{
         await connectDB();
-        const homeSlides = await HomeSliderModel.find({})
+        const homeSlides = await HomeSliderModel.find({}).sort({'created_at': '-1'})
         res.send(
             Response({
                 data: homeSlides
