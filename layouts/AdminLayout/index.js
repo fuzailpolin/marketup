@@ -155,14 +155,15 @@ const AdminLayout = ({children}) => {
 
 
                     <li className="my-2 md:my-0">
-                        <a href="#"
-                           className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
+                        <Link href={'/dashboard/contacts'}>
+                            <a className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
 
-                            <FaBookOpen className={'inline'}/>
+                                <FaBookOpen className={'inline'}/>
 
-                            <span className="block pl-2 md:pb-0 text-sm left-10">Contacts</span>
+                                <span className="block pl-2 md:pb-0 text-sm left-10">Contacts</span>
 
-                        </a>
+                            </a>
+                        </Link>
                     </li>
                 </ul>
 
