@@ -1,4 +1,6 @@
 import { useState } from "react";
+import axiosPost from '../../../frontend/helpers/axiosPost';
+import { toast } from 'react-toastify';
 
 const ContactUsForm = () => {
 
@@ -8,9 +10,29 @@ const ContactUsForm = () => {
     const [phone, setPhone] = useState('')
     const [message, setMessage] = useState('')
 
+    const [loading, setLoading] = useState(false);
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(`values: ${name}, ${email}, ${subject}, ${phone}, ${message}`);
+        setLoading(true)
+        axiosPost('/api/contact/create' ,{ name, email, subject, phone, message})
+        .then(res=>{
+            toast.success(`Thank you ${name} for reaching out. We will contact you soon!`);
+            resetForm();
+            setLoading(false)
+        })
+        .catch(err=>{
+            toast.error('Something went wrong. Plase try again later!')
+            setLoading(false);
+        })
+    }
+
+    const resetForm = () =>{
+        setName('');
+        setEmail('');
+        setPhone('');
+        setSubject('');
+        setMessage('');
     }
 
     return (
@@ -78,9 +100,10 @@ const ContactUsForm = () => {
                 <div className={'w-full flex justify-end'}>
                     <button 
                         type="submit"
+                        disabled={loading}
                         className={'w-40 h-12 bg-primary text-center text-white font-poppins text-lg font-medium rounded-md'}
                     >
-                        Register
+                        { loading ? 'loading...' : 'Send Message' }
                     </button>
                 </div>
                 
