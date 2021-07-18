@@ -62,7 +62,7 @@ const AdminLayout = ({children}) => {
                     </li>
 
                     <li className="my-2 md:my-0">
-                        <Link href={'/dashboard/teams'}>
+                        <Link href={'/dslfdjsfloiksldfkjsdfl65f46fs84s8d968f41fd35sdf541sdf1s85df4sd5g1dfh1rtgdf3g1df65g4d65h4d3s21dfs65d4f65s1df5sd165h46d5f41h35d1fhd5f3hd6f85/teams'}>
                             <a className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
 
                                 <FaBookOpen className={'inline'}/>
@@ -75,7 +75,7 @@ const AdminLayout = ({children}) => {
                     </li>
 
                     <li className="my-2 md:my-0">
-                        <Link href={'/dashboard/works'}>
+                        <Link href={'/dslfdjsfloiksldfkjsdfl65f46fs84s8d968f41fd35sdf541sdf1s85df4sd5g1dfh1rtgdf3g1df65g4d65h4d3s21dfs65d4f65s1df5sd165h46d5f41h35d1fhd5f3hd6f85/works'}>
                             <a
                                 className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
 
@@ -88,7 +88,7 @@ const AdminLayout = ({children}) => {
                     </li>
 
                     <li className="my-2 md:my-0">
-                        <Link href={'/dashboard/clients'}>
+                        <Link href={'/dslfdjsfloiksldfkjsdfl65f46fs84s8d968f41fd35sdf541sdf1s85df4sd5g1dfh1rtgdf3g1df65g4d65h4d3s21dfs65d4f65s1df5sd165h46d5f41h35d1fhd5f3hd6f85/clients'}>
                             <a className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
 
                                 <FaBookOpen className={'inline'}/>
@@ -101,7 +101,7 @@ const AdminLayout = ({children}) => {
 
 
                     <li className="my-2 md:my-0">
-                        <Link href={'/dashboard/testimonials'}>
+                        <Link href={'/dslfdjsfloiksldfkjsdfl65f46fs84s8d968f41fd35sdf541sdf1s85df4sd5g1dfh1rtgdf3g1df65g4d65h4d3s21dfs65d4f65s1df5sd165h46d5f41h35d1fhd5f3hd6f85/testimonials'}>
                             <a
                                 className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
 
@@ -115,7 +115,7 @@ const AdminLayout = ({children}) => {
 
 
                     <li className="my-2 md:my-0">
-                        <Link href={'/dashboard/partner'}>
+                        <Link href={'/dslfdjsfloiksldfkjsdfl65f46fs84s8d968f41fd35sdf541sdf1s85df4sd5g1dfh1rtgdf3g1df65g4d65h4d3s21dfs65d4f65s1df5sd165h46d5f41h35d1fhd5f3hd6f85/partner'}>
                             <a
                                 className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
 
@@ -128,7 +128,7 @@ const AdminLayout = ({children}) => {
                     </li>
 
                     <li className="my-2 md:my-0">
-                        <Link href={'/dashboard/jobs'}>
+                        <Link href={'/dslfdjsfloiksldfkjsdfl65f46fs84s8d968f41fd35sdf541sdf1s85df4sd5g1dfh1rtgdf3g1df65g4d65h4d3s21dfs65d4f65s1df5sd165h46d5f41h35d1fhd5f3hd6f85/jobs'}>
                             <a
                                 className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
 
@@ -141,7 +141,7 @@ const AdminLayout = ({children}) => {
                     </li>
 
                     <li className="my-2 md:my-0">
-                        <Link href={'/dashboard/home_slider'}>
+                        <Link href={'/dslfdjsfloiksldfkjsdfl65f46fs84s8d968f41fd35sdf541sdf1s85df4sd5g1dfh1rtgdf3g1df65g4d65h4d3s21dfs65d4f65s1df5sd165h46d5f41h35d1fhd5f3hd6f85/home_slider'}>
                             <a
                                 className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
 
@@ -155,7 +155,7 @@ const AdminLayout = ({children}) => {
 
 
                     <li className="my-2 md:my-0">
-                        <Link href={'/dashboard/contacts'}>
+                        <Link href={'/dslfdjsfloiksldfkjsdfl65f46fs84s8d968f41fd35sdf541sdf1s85df4sd5g1dfh1rtgdf3g1df65g4d65h4d3s21dfs65d4f65s1df5sd165h46d5f41h35d1fhd5f3hd6f85/contacts'}>
                             <a className="flex py-1 md:py-3 pl-1 align-middle text-gray-600 no-underline hover:text-indigo-400">
 
                                 <FaBookOpen className={'inline'}/>
@@ -176,15 +176,15 @@ const AdminLayout = ({children}) => {
                     <nav id="header1"
                          className="bg-gray-100 w-auto flex-1 border-b-1 border-gray-300 order-1 lg:order-2">
 
-                        <div className="flex h-full justify-between items-center">
+                        <div className="flex h-full justify-between items-center  ">
                             <button onClick={toggleNav} className={'focus:outline-none pl-2'}>
                                 <FaBars size={28}/>
                             </button>
 
                             <div className="flex relative inline-block">
 
-                                <div className="relative text-sm py-4 px-2">
-                                    <button onClick={toggleMenu} className="flex items-center focus:outline-none mr-3">
+                                <div className="relative text-sm py-4 px-2 ">
+                                    <button onClick={toggleMenu} className=" opacity-0 flex items-center focus:outline-none mr-3">
                                         <span className="block mr-2">Hi, User </span>
                                         {
                                             down ? <FaAngleDown/> : <FaAngleUp/>

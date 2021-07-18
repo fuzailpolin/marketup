@@ -1,21 +1,35 @@
 import {useState, useEffect, useRef} from "react";
 import ImageGallery from "react-image-gallery";
 import { FaTimes } from 'react-icons/fa'
-
-const w = [
-    {image:'/Images/Gallery/img1.jpg', company: 'company', work: 'work 1'},
-    {image:'/Images/Gallery/img2.jpg', company: 'company', work: 'work1'},
-    {image:'/Images/Gallery/img3.jpg', work: 'work 1', company: "company"},
-    {image:'/Images/Gallery/img4.jpg', company: "company", work: "work 1"},
-    {image: '/Images/Gallery/img1.jpg', company: 'company', work: "work 1"},
-    {image: '/Images/Gallery/img2.jpg', company: "company", work: 'work 1'},
-    {image:'/Images/Gallery/img3.jpg', work: "work 1", company: "company"}
-]
-
-const works = w.map(v => ({original: v.image, thumbnail: v.image}))
+import axiosGet from "../../../../frontend/helpers/axiosGet";
+import {cloudinaryCloudName} from "../../../../frontend/env";
+import {Image, Transformation} from "cloudinary-react";
 
 
 const OurWorkSection = () => {
+
+
+    const [mappedWork, setMappedWork] = useState([])
+
+    const [workss, setWorks] = useState([])
+    useEffect(() => {
+        axiosGet('/api/works')
+            .then(res => setWorks(res.data))
+            .catch(err => setWorks([]))
+    }, [])
+
+    useEffect(() => {
+
+        setMappedWork(workss.map(v => (
+                {
+                    original:  `http://res.cloudinary.com/${cloudinaryCloudName}/image/upload/c_fill,g_south,w_1200/v1/${v.image}`,
+                    thumbnail: `http://res.cloudinary.com/${cloudinaryCloudName}/image/upload/c_fill,g_south,w_1200/v1/${v.image}`
+                }
+            )
+            )
+        )
+
+    }, [workss])
 
     const clickBtn = useRef(null);
     const [visible, setVisible] = useState({show: false, fullscreen: 0})
@@ -36,7 +50,7 @@ const OurWorkSection = () => {
             {
                 visible.show && (
                     <ImageGallery
-                        items={works} startIndex={visible.fullscreen}
+                        items={mappedWork} startIndex={visible.fullscreen}
                         showPlayButton={false}
                         showThumbnails={false}
                         useBrowserFullscreen={false}
@@ -72,12 +86,14 @@ const OurWorkSection = () => {
                 </div>
                 <div className={'grid grid-cols-12 mx-5 gap-3 '}>
                     {
-                        w.map((item, index) => {
+                        workss.map((item, index) => {
                             return (
                                 <div key={index} className={'col-span-12 md:col-span-6 lg:col-span-4 '}>
                                     <div className={'relative overflow-hidden h-56  xx'}>
-                                        <img src={item.image} alt="item"
-                                             className={'w-full absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2'}/>
+
+                                        <Image className={'w-full absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2'} cloudName={cloudinaryCloudName} publicId={item.image}>
+                                            <Transformation width={300}  gravity="south" crop="fill" />
+                                        </Image>
 
                                         <div className={'absolute transition duration-300 md:opacity-0 -bottom-0 -left-0 bg-black bg-opacity-60 w-full'}>
                                             <p className={'uppercase text-left pl-2 font-semibold font-mons text-white'}>{item.company}</p>

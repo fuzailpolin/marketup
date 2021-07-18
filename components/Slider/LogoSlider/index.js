@@ -1,5 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
+import {cloudinaryCloudName} from "../../../frontend/env";
+import {Image, Transformation} from "cloudinary-react";
 
 // const CustomArrow = (props) => {
 //     const { className, style, onClick } = props;
@@ -47,7 +49,10 @@ const LogoSlider = ({logos}) => {
                 logos.map((item, index)=>{
                     return (
                         <div key={index} className={'px-3'}>
-                            <img className={'w-52 h-16 object-fill'} src={item} alt='not found' />
+
+                            <Image className={'w-52 h-16 object-fill'} cloudName={cloudinaryCloudName} publicId={item}>
+                                <Transformation width={200}  gravity="south" crop="fill" />
+                            </Image>
                         </div>
                     )
                 })

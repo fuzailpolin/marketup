@@ -1,57 +1,28 @@
 import PartnershipSlider from "../../../Slider/PartnershipSlider";
+import {useState, useEffect} from "react";
+import axiosGet from "../../../../frontend/helpers/axiosGet";
 
-const data = [
-    {
-        name: 'Faisal Rahim Omi',
-        designation: 'CEO',
-        image: '/Images/temp/temp1.jpg',
-        companyLogo: '/Images/homepage/cientsLogo/aws.svg',
-        text:`We thrive when we have permission to find the best solutions for the 
-        brief, without predefined limitations. Having the brief, Research team 
-        does the research and provides data and other necessary statistics 
-        needed. Strategy team develops the marketing strategy. Then a 
-        brainstorming session of strategy and creative team find out the 
-        solution for the problem. After that, creative team starts working on 
-        the creative strategy and development of creative tools. While it’s 
-        approved from client, we go for the execution. Our in-house and out 
-        sourcing vendors are prompt in delivering all the things before the 
-        final deadline`
-    },
-    {
-        name: 'Nasif Zuhayer Auritro',
-        designation: 'COO',
-        image: '/Images/temp/temp2.jpg',
-        companyLogo: '/Images/homepage/cientsLogo/aws.svg',
-        text:`We thrive when we have permission to find the best solutions for the 
-        brief, without predefined limitations. Having the brief, Research team 
-        does the research and provides data and other necessary statistics 
-        needed. Strategy team develops the marketing strategy. Then a 
-        brainstorming session of strategy and creative team find out the 
-        solution for the problem. After that, creative team starts working on 
-        the creative strategy and development of creative tools. While it’s 
-        approved from client, we go for the execution. Our in-house and out 
-        sourcing vendors are prompt in delivering all the things before the 
-        final deadline`
-    },
-    {
-        name: 'Masuma Aziz',
-        designation: 'CSO',
-        image: '/Images/temp/temp3.jpg',
-        companyLogo: '/Images/homepage/cientsLogo/aws.svg',
-        text:`We thrive when we have permission to find the best solutions for the 
-        brief, without predefined limitations. Having the brief, Research team 
-        does the research and provides data and other necessary statistics 
-        needed. Strategy team develops the marketing strategy. Then a 
-        brainstorming session of strategy and creative team find out the 
-        solution for the problem. After that, creative team starts working on 
-        the creative strategy and development of creative tools. While it’s 
-        approved from client, we go for the execution. Our in-house and out 
-        sourcing vendors are prompt in delivering all the things before the 
-        final deadline`
-    }
-]
+
 
 const PartnershipSection = () => {
+    const [data, setData] = useState([])
+    useEffect(() => {
+        axiosGet('/api/partners')
+            .then(res => {
+                setData(
+                    res.data.map(d => ({
+                        name:  d.name,
+                        designation: d.designation,
+                        image: d.image,
+                        companyLogo: d.company_logo,
+                        text: d.text
+                    }))
+                )
+            })
+            .catch(err => setData([]))
+    }, [])
+
+
     return (
         <div className={'bg-black'}>
             <div className={'pt-20'}>

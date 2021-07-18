@@ -17,7 +17,7 @@ const ContactUs = () => {
                     <div className={'grid grid-cols-12'}>
                         <div className={'col-span-12 md:col-span-7'}>
                             <div className={'grid justify-end mx-3 md:mx-6 lg:mx-14'}>
-                                <img className={'w-20 h-20 transition delay-500'} src={'/Images/logo2.gif'} alt='not found' />
+                                <img style={{filter: 'invert(100%)'}} className={'w-20 h-20 transition delay-500'} src={'/Images/logo2.gif'} alt='not found' />
                             </div>
                         </div>
                         <div className={'col-span-12 md:col-span-5'}>

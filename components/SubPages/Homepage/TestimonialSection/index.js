@@ -1,33 +1,22 @@
 import TestimonialSlider from "../../../Slider/TestimonialSlider";
+import { useState, useEffect } from "react";
+import axiosGet from "../../../../frontend/helpers/axiosGet";
 
-const data = [
-    {
-        text: 'Ideadose Communication is one of the fastest growing Advertisement Agency in Bangladesh. We are proud and renown for our unconventional company culture. That’s why we are looking for modern marketing and brand experts with open minded and gargantuan talent, always.',
-        name: 'Reazaul Karim Titu',
-        designation: 'Barnd Manager',
-        company: 'Rahim Group'
-    },
-    {
-        text: 'Ideadose Communication is one of the fastest growing Advertisement Agency in Bangladesh. We are proud and renown for our unconventional company culture. That’s why we are looking for modern marketing and brand experts with open minded and gargantuan talent, always.',
-        name: 'Reazaul Karim Titu',
-        designation: 'Barnd Manager',
-        company: 'Rahim Group'
-    },
-    {
-        text: 'Ideadose Communication is one of the fastest growing Advertisement Agency in Bangladesh. We are proud and renown for our unconventional company culture. That’s why we are looking for modern marketing and brand experts with open minded and gargantuan talent, always.',
-        name: 'Reazaul Karim Titu',
-        designation: 'Barnd Manager',
-        company: 'Rahim Group'
-    },
-    {
-        text: 'Ideadose Communication is one of the fastest growing Advertisement Agency in Bangladesh. We are proud and renown for our unconventional company culture. That’s why we are looking for modern marketing and brand experts with open minded and gargantuan talent, always.',
-        name: 'Reazaul Karim Titu',
-        designation: 'Barnd Manager',
-        company: 'Rahim Group'
-    },
-]
 
 const TestimonialSection = () => {
+    const [data, setData] = useState([])
+    useEffect(() => {
+        axiosGet('/api/testimonials')
+            .then(res => setData(
+                res.data.map(d => ({
+                    text: d.text,
+                    name: d.name,
+                    designation :d.designation,
+                    company: d.company
+                }))
+            ))
+    }, [])
+
     return (
         <div className={'bg-black'}>
             <div 

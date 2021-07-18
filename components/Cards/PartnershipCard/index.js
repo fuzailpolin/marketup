@@ -1,4 +1,5 @@
 import {Image, Transformation} from "cloudinary-react";
+import {cloudinaryCloudName} from "../../../frontend/env";
 
 const PartnershipCard = ({name, designation, image, companyLogo, text}) => {
     return (
@@ -6,7 +7,7 @@ const PartnershipCard = ({name, designation, image, companyLogo, text}) => {
             <div className={'grid grid-cols-12'}>
                 <div className={'hidden md:block col-span-2'}>
                     <div className={'grid place-items-center h-full'}>
-                        <Image className={'w-52 h-16'} cloudName="dmkch2bnk" publicId={companyLogo}>
+                        <Image className={'w-52 h-16'} cloudName={cloudinaryCloudName} publicId={companyLogo}>
                             <Transformation width="400"  gravity="south" crop="fill" />
                         </Image>
 
@@ -15,7 +16,7 @@ const PartnershipCard = ({name, designation, image, companyLogo, text}) => {
                 <div className={'col-span-12 md:col-span-4 grid place-items-center'}>
                     <div className={'rounded-md'}>
                         <div className={'grid justify-center'}>
-                            <Image  className={'h-40 w-40 rounded-full object-cover'} cloudName="dmkch2bnk" publicId={image}>
+                            <Image  className={'h-40 w-40 rounded-full object-cover'} cloudName={cloudinaryCloudName} publicId={image}>
                                 <Transformation width="400"  gravity="south" crop="fill" />
                             </Image>
                         </div>
@@ -27,7 +28,7 @@ const PartnershipCard = ({name, designation, image, companyLogo, text}) => {
                 </div>
                 <div className={'md:hidden col-span-12'}>
                     <div className={'grid place-items-center mb-3'}>
-                        <Image  className={'md:h-16 h-10'} cloudName="dmkch2bnk" publicId={companyLogo}>
+                        <Image  className={'md:h-16 h-10'} cloudName={cloudinaryCloudName} publicId={companyLogo}>
                             <Transformation width="400"  gravity="south" crop="fill" />
                         </Image>
 

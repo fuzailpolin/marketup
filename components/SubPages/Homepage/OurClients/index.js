@@ -1,21 +1,16 @@
 import LogoSlider from '../../../Slider/LogoSlider';
-
-const logos = [
-    '/Images/homepage/cientsLogo/aws.svg',
-    '/Images/homepage/cientsLogo/coca.svg',
-    '/Images/homepage/cientsLogo/ebay.svg',
-    '/Images/homepage/cientsLogo/fb.svg',
-    '/Images/homepage/cientsLogo/firebase.svg',
-    '/Images/homepage/cientsLogo/google.svg',
-    '/Images/homepage/cientsLogo/microsoft.svg',
-    '/Images/homepage/cientsLogo/ebay.svg',
-    '/Images/homepage/cientsLogo/fb.svg',
-    '/Images/homepage/cientsLogo/firebase.svg',
-    '/Images/homepage/cientsLogo/google.svg',
-    '/Images/homepage/cientsLogo/microsoft.svg',
-]
+import {useState, useEffect} from "react";
+import axiosGet from "../../../../frontend/helpers/axiosGet";
 
 const OurClients = () => {
+    const [logos, setLogos] = useState([])
+
+    useEffect(() => {
+        axiosGet('/api/clients')
+            .then(res => setLogos(res.data.map(l => l.image)))
+            .catch(err => setLogos([]))
+    }, [])
+
     return (
         <div className={'bg-black pb-10'}>
         <div className={'container mx-auto pt-20'} id={'client'}>
