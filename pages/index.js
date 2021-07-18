@@ -3,6 +3,7 @@ import HeroSection from "../components/SubPages/Homepage/HeroSection";
 import AboutMarketUp from "../components/SubPages/Homepage/AboutMarketUp";
 import ServiceSection from "../components/SubPages/Homepage/ServiceSection";
 import OurTeam from "../components/SubPages/Homepage/OurTeam";
+import { ToastContainer } from 'react-toastify';
 
 
 // import layout
@@ -25,7 +26,7 @@ const HomePage = () => {
             <TestimonialSection />
             <PartnershipSection />
             <ContactUs />
-
+            <ToastContainer />
         </HomeLayout>
     );
 };

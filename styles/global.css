@@ -13,6 +13,7 @@
   src: url("/fonts/Typoslab_ irregular/TypoSlab Irregular Demo.otf");
   font-display: swap;
 }
+@import "react-toastify/dist/ReactToastify.css";
 
 html {
   scroll-behavior: smooth;
@@ -128,7 +129,7 @@ hover\:border-none:hover {
   }
 }
 
-.spinner{
+.spinner {
   animation-name: spin;
   animation-duration: 2s;
   animation-iteration-count: infinite;
