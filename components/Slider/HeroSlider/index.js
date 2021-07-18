@@ -20,7 +20,7 @@ const HeroSlider = ({images}) => {
             {
                 images.map((item, index)=>{
                     return (
-                        <div className="h-30vh md:h-70vh -mb-3 overflow-hidden">
+                        <div key={index} className="h-30vh md:h-70vh -mb-3 overflow-hidden">
                             <Image className={'w-full object-cover  h-full object-center'} cloudName={cloudinaryCloudName} publicId={item.image}>
                             </Image>
                         </div>
