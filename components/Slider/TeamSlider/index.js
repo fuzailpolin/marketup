@@ -45,10 +45,10 @@ const TeamSlider = ({team}) => {
       <div>
         <Slider {...settings}>
             {
-                team.map((item, index)=>{
+                team.map((item)=>{
                     return (
-                        <div key={index} className={'px-3'}>
-                            <TeamCard {...item} />
+                        <div key={item._id} className={'px-3'}>
+                            <TeamCard name={item.name} designation={item.designation} image={item.image} />
                         </div>
                     )
                 })

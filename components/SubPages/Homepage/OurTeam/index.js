@@ -1,30 +1,19 @@
 import TeamCard from "../../../Cards/TeamCard";
 import TeamSlider from "../../../Slider/TeamSlider";
+import {useState, useEffect} from "react";
+import axiosGet from "../../../../frontend/helpers/axiosGet";
 
-const team = [
-    {
-        name: 'Masuma Aziz',
-        designation: 'CSO',
-        image: '/Images/temp/temp3.jpg'
-    },
-    {
-        name: 'Nasif Zuhayer Auritro',
-        designation: 'COO',
-        image: '/Images/temp/temp2.jpg'
-    },
-    {
-        name: 'Tanvir Ahmed (Teyder)',
-        designation: 'CMO',
-        image: '/Images/temp/temp4.jpg'
-    },
-    {
-        name: 'Tanvir Ahmed (Teyder)',
-        designation: 'CMO',
-        image: '/Images/temp/temp4.jpg'
-    }
-]
+
 
 const OurTeam = () => {
+    const [team, setTeam] = useState([])
+
+    useEffect(() => {
+        axiosGet('/api/team')
+            .then(res => setTeam(res.data))
+            .catch(err => setTeam([]))
+    }, [])
+
     return (
         <div className={'bg-black'}>
             <div className={'container mx-auto pt-20'} id={'team'}>
