@@ -101,7 +101,7 @@ const ContactUsForm = () => {
                     <button 
                         type="submit"
                         disabled={loading}
-                        className={'w-40 h-12 bg-primary text-center text-white font-poppins text-lg font-medium rounded-md'}
+                        className={'w-40 h-12 bg-black text-center text-white font-poppins text-lg font-medium rounded-md'}
                     >
                         { loading ? 'loading...' : 'Send Message' }
                     </button>

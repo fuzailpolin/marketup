@@ -21,29 +21,29 @@ const CurrentOpenings = () => {
           </span>
         </h2>
       </div>
-      <div className="text-textColor  container mx-auto">
         {
-          jobData ? 
-            <div className="container px-2 md:px-14 py-6 mx-auto lg:border lg:border-gray-200">
-              {jobData?.map((data, index) => (
-                  <OpeningsDetails
-                      position={data.position}
-                      vacancy={data.vacancy}
-                      jobType={data.jobType}
-                      deadLine={{lastDate: data.lastDate}}
-                      link={{
-                          fb: data?.fb || "#",
-                          insta: data?.insta || "#"
-                      }}
-                      key={data._id}
-                  />
-              ))}
+          jobData && jobData.length ? 
+            <div className="text-textColor  container mx-auto">
+              <div className="container px-2 md:px-14 py-6 mx-auto lg:border lg:border-gray-200">
+                {jobData?.map((data, index) => (
+                    <OpeningsDetails
+                        position={data.position}
+                        vacancy={data.vacancy}
+                        jobType={data.jobType}
+                        deadLine={{lastDate: data.lastDate}}
+                        link={{
+                            fb: data?.fb || "#",
+                            insta: data?.insta || "#"
+                        }}
+                        key={data._id}
+                    />
+                ))}
+              </div> 
             </div> :
             <div className={'text-gray-300 text-center font-poppins text-lg'}>
               We dont have any job opening right now! Thank you for staying by us.
             </div>
         }
-      </div>
     </div>
   );
 };

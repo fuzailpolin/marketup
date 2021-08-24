@@ -47,18 +47,24 @@ const Footer = () => {
                             <h2 className={'text-sm font-poppins text-white font-medium py-1 md:py-3'}>Social Media</h2>
                             <div className={'text-primary pt-3 md:pt-7'}>
                                 <div
-                                    className={'mr-2 inline-flex h-8 w-8 rounded-full bg-white justify-center items-center'}>
-                                    <FaFacebookF/>
+                                    className={'mr-2 inline-flex h-8 w-8 rounded-full bg-white justify-center items-center cursor-pointer'}>
+                                    <a target="_blank" href={'https://www.facebook.com/marketupdigital/'} rel="noopener noreferrer">
+                                        <FaFacebookF/>
+                                    </a>
                                 </div>
 
                                 <div
                                     className={'mr-2 inline-flex h-8 w-8 rounded-full bg-white justify-center items-center'}>
-                                    <FaInstagram/>
+                                    <a target="_blank" href={'#'} rel="noopener noreferrer">
+                                        <FaInstagram/>
+                                    </a>
                                 </div>
 
                                 <div
                                     className={'inline-flex h-8 w-8 rounded-full bg-white justify-center items-center'}>
-                                    <FaLinkedinIn/>
+                                    <a target="_blank" href={'#'} rel="noopener noreferrer">
+                                        <FaLinkedinIn/>
+                                    </a>
                                 </div>
                             </div>
                         </div>

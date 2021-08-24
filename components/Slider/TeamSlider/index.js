@@ -46,11 +46,16 @@ const TeamSlider = ({team}) => {
         <Slider {...settings}>
             {
                 team.map((item)=>{
+                  if(item.designation.toUpperCase() === 'CEO' || item.designation.toUpperCase() === 'CHIEF EXECUTIVE OFFICER'){
+                    return;
+                  }
+                  else{
                     return (
                         <div key={item._id} className={'px-3'}>
                             <TeamCard name={item.name} designation={item.designation} image={item.image} />
                         </div>
                     )
+                  }
                 })
             }
         </Slider>
