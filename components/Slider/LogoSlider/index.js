@@ -49,7 +49,6 @@ const LogoSlider = ({logos}) => {
                 logos.map((item, index)=>{
                     return (
                         <div key={index} className={'px-3'}>
-
                             <Image className={'w-52 h-16 object-fill'} cloudName={cloudinaryCloudName} publicId={item}>
                                 <Transformation width={200}  gravity="south" crop="fill" />
                             </Image>

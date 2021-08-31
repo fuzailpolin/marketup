@@ -55,14 +55,14 @@ const Footer = () => {
 
                                 <div
                                     className={'mr-2 inline-flex h-8 w-8 rounded-full bg-white justify-center items-center'}>
-                                    <a target="_blank" href={'#'} rel="noopener noreferrer">
+                                    <a target="_blank" href={'https://instagram.com/marketupgroup?utm_medium=copy_link'} rel="noopener noreferrer">
                                         <FaInstagram/>
                                     </a>
                                 </div>
 
                                 <div
                                     className={'inline-flex h-8 w-8 rounded-full bg-white justify-center items-center'}>
-                                    <a target="_blank" href={'#'} rel="noopener noreferrer">
+                                    <a target="_blank" href={'https://www.linkedin.com/company/marketupgroup'} rel="noopener noreferrer">
                                         <FaLinkedinIn/>
                                     </a>
                                 </div>
