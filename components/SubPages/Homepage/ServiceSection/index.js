@@ -81,31 +81,31 @@ const services = [
     key: 11,
     title: "Outdoor Advertising",
     children: <OutdoorAdertisement />,
-    text: "",
+    text: "Cinderella may have birds and rats but you have your very own crows who will create laudable merchandise for your brand.",
   },
   {
     key: 12,
     title: "Event Management",
     children: <EventManagement />,
-    text: "",
+    text: "Worried about executing an event? Let the crows know your theme and see the idea into reality.",
   },
   {
     key: 13,
     title: "Wall Painting",
     children: <WallPainting />,
-    text: "",
+    text: "Tired of your boring walls? Allow us to add color to your dreams through our exemplary wall-art.",
   },
   {
     key: 14,
     title: "Printing",
     children: <Painting />,
-    text: "",
+    text: "Business cards, posters, banners? The crows got everything under control.",
   },
   {
     key: 15,
     title: "Vehicular Advertising",
     children: <VehicularAdvertising />,
-    text: "",
+    text: "Advertisements look better on wheels, right? Contact us for top of the line ad-vehicles cruising through your streets!",
   },
 ];
 
