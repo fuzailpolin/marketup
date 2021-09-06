@@ -4,11 +4,6 @@ import Link from 'next/link'
 const Footer = () => {
     return (
         <>
-            <div className={'bg-black pt-8'}>
-                <iframe className={'w-full h-60 md:h-96'}
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14593.529954832293!2d90.40427345887082!3d23.876051964805423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1625727000429!5m2!1sen!2sbd"
-                    allowFullScreen="" style={{filter: 'invert(100%)'}} loading="lazy"></iframe>
-            </div>
             <div className={'bg-dark'}>
                 <div className="container mx-auto px-5 md:px-24 ">
                     <div className="grid md:grid-cols-3">
@@ -52,18 +47,24 @@ const Footer = () => {
                             <h2 className={'text-sm font-poppins text-white font-medium py-1 md:py-3'}>Social Media</h2>
                             <div className={'text-primary pt-3 md:pt-7'}>
                                 <div
-                                    className={'mr-2 inline-flex h-8 w-8 rounded-full bg-white justify-center items-center'}>
-                                    <FaFacebookF/>
+                                    className={'mr-2 inline-flex h-8 w-8 rounded-full bg-white justify-center items-center cursor-pointer'}>
+                                    <a target="_blank" href={'https://www.facebook.com/marketupdigital/'} rel="noopener noreferrer">
+                                        <FaFacebookF/>
+                                    </a>
                                 </div>
 
                                 <div
                                     className={'mr-2 inline-flex h-8 w-8 rounded-full bg-white justify-center items-center'}>
-                                    <FaInstagram/>
+                                    <a target="_blank" href={'https://instagram.com/marketupgroup?utm_medium=copy_link'} rel="noopener noreferrer">
+                                        <FaInstagram/>
+                                    </a>
                                 </div>
 
                                 <div
                                     className={'inline-flex h-8 w-8 rounded-full bg-white justify-center items-center'}>
-                                    <FaLinkedinIn/>
+                                    <a target="_blank" href={'https://www.linkedin.com/company/marketupgroup'} rel="noopener noreferrer">
+                                        <FaLinkedinIn/>
+                                    </a>
                                 </div>
                             </div>
                         </div>

@@ -10,7 +10,9 @@ const OurTeam = () => {
 
     useEffect(() => {
         axiosGet('/api/team')
-            .then(res => setTeam(res.data))
+            .then(res => {
+                setTeam(res.data);
+            })
             .catch(err => setTeam([]))
     }, [])
 
@@ -28,11 +30,17 @@ const OurTeam = () => {
                 <div className={'grid grid-cols-12'}>
                     <div className={'col-span-0 md:col-span-3 lg:col-span-4'}></div>
                     <div className={'col-span-12 md:col-span-6 lg:col-span-4 mx-5'}>
-                        <TeamCard 
-                            name={'Faisal Rahim Omi'}
-                            designation={'CEO'}
-                            image={'/Images/temp/temp1.jpg'}
-                        />
+                        {
+                            team?.map((item)=>{
+                                if(item.designation.toUpperCase() === 'CEO' || item.designation.toUpperCase() === 'CHIEF EXECUTIVE OFFICER'){
+                                    return (<TeamCard 
+                                        name={item.name}
+                                        designation={item.designation}
+                                        image={item.image}
+                                    /> )
+                                }
+                            })
+                        }
                     </div>
                     <div className={'lg:col-span-4 col-span-0 md:col-span-3 '}></div>
                 </div>

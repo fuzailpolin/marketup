@@ -1,1 +1,1 @@
-export const cloudinaryCloudName = 'dmkch2bnk'
+export const cloudinaryCloudName = 'dhrjql4ev'

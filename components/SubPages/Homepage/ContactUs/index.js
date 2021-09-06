@@ -3,11 +3,11 @@ import ContactUsInfo from "../../../Cards/ContactUsInfo";
 
 const ContactUs = () => {
     return (
-        <div className={'bg-black pb-5'}>
+        <div className={' bg-primary pb-5'}>
             <div className={'container mx-auto pt-20'} id={'contact'}>
                 <div>
                     <h2 className={'text-gray-200 pb-5 font-medium text-center text-lg md:text-2xl font-typoSlab'}>
-                        <span className={'text-primary font-bold border-b-2 border-primary mr-1'}>
+                        <span className={'text-black font-bold border-b-2 border-primary mr-1'}>
                             Contact
                         </span>
                         Us

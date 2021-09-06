@@ -6,6 +6,7 @@ import Modal from 'react-modal'
 import {BiLoaderCircle} from 'react-icons/bi';
 import axiosPost from "../../../frontend/helpers/axiosPost";
 import {Image, Transformation} from "cloudinary-react";
+import { cloudinaryCloudName } from "../../../frontend/env";
 
 
 const Teams = () => {
@@ -241,7 +242,7 @@ const Teams = () => {
                                 <div key={work._id} className="col-span-12 md:col-span-6 lg:col-span-4">
                                     <div className={'relative overflow-hidden h-56  xx'}>
 
-                                        <Image className={'w-full absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2'} cloudName="dmkch2bnk" publicId={work.image}>
+                                        <Image className={'w-full absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2'} cloudName={cloudinaryCloudName} publicId={work.image}>
                                             <Transformation width="400"  gravity="south" crop="fill" />
                                         </Image>
 

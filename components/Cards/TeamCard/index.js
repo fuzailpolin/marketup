@@ -12,8 +12,8 @@ const TeamCard = ({image, name, designation}) => {
                     </Image>
                 </div>
                 <div className={'text-center mt-5 mb-10'}>
-                    <p className={'font-poppins text-base lg:text-2xl font-medium text-gray-200'}>{name}</p>
-                    <p className={'font-poppins text-base lg:text-2xl text-gray-200 mt-3'}>{designation}</p>
+                    <p className={'font-poppins text-lg lg:text-2xl font-medium text-gray-200'}>{name}</p>
+                    <p className={'font-poppins text-sm lg:text-lg text-gray-200 mt-3'}>{designation}</p>
                 </div>
             </div>
         </div>

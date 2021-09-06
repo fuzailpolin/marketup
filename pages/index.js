@@ -13,6 +13,7 @@ import OurClients from "../components/SubPages/Homepage/OurClients";
 import TestimonialSection from "../components/SubPages/Homepage/TestimonialSection";
 import PartnershipSection from "../components/SubPages/Homepage/PartnershipSection";
 import ContactUs from "../components/SubPages/Homepage/ContactUs";
+import GoogleMap from "../components/Maps/GoogleMap";
 
 const HomePage = () => {
     return (
@@ -26,6 +27,7 @@ const HomePage = () => {
             <TestimonialSection />
             <PartnershipSection />
             <ContactUs />
+            <GoogleMap />
             <ToastContainer />
         </HomeLayout>
     );
