@@ -5,7 +5,16 @@
   @apply shadow-lg;
 }
 
-.service-card:hover .cls-1 {
+.service-card:hover .cls-1{
+  stroke: #ed3c78 !important;
+}
+.service-card:hover .cls-2 {
+  stroke: #ed3c78 !important;
+}
+.service-card:hover .cls-3 {
+  stroke: #ed3c78 !important;
+}
+.service-card:hover .cls-4 {
   stroke: #ed3c78 !important;
 }
 
@@ -30,7 +39,23 @@
   stroke: #ed3c78 !important;
 }
 
-.service-card:hover div svg circle {
+.service-card:hover div svg circle { 
+  stroke: #ed3c78 !important;
+}
+
+.service-card:hover div svg polyline {
+  stroke: #ed3c78 !important;
+}
+
+.service-card:hover div svg line {
+  stroke: #ed3c78 !important;
+}
+
+.service-card:hover div svg rect {
+  stroke: #ed3c78 !important;
+}
+
+.service-card:hover div svg polygon {
   stroke: #ed3c78 !important;
 }
 

@@ -7,8 +7,8 @@ const AboutMarketUp = () => {
     <div
       className={"bg-black bg-contain md:bg-cover"}
       style={{
-        backgroundImage: "url('/Images/wire_4.gif')",
-        backgroundPosition: "top left",
+        backgroundImage: "url('/Images/wire_4.jpg')",
+        backgroundPosition: "top",
         backgroundRepeat: "no-repeat",
       }}
     >
