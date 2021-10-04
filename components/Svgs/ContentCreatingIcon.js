@@ -1,22 +1,28 @@
 const ContentCreatingIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 62.498 59.093">
-               <g id="Group_113" transform="translate(-616.626 3740.927)">
-            <path id="Path_59" d="M556.574 426.846a28.76 28.76 0 1 1-5.774-17.286" className="cls-1"
-                  transform="translate(118.38 -4138.22)"/>
-            <path id="Path_74" d="M539.29 403.76l7.19 11.294h9.032l5.955-11.088" className="cls-1"
-                  transform="translate(95.341 -4141.469)"/>
-            <path id="Line_16" d="M5.754 0L0 41.891" className="cls-1" transform="translate(636.068 -3726.416)"/>
-            <path id="Line_17" d="M0 0L7.19 40.66" className="cls-1" transform="translate(650.853 -3726.416)"/>
-            <path id="Path_75"
-                  d="M600.495 441.3l-7.72.158a2.565 2.565 0 0 1-2.565-2.565v-11.908a2.565 2.565 0 0 1 2.565-2.565h16.846a2.565 2.565 0 0 1 2.565 2.565V438.9a2.565 2.565 0 0 1-2.565 2.565l-4.155-.038"
-                  className="cls-1" transform="translate(66.188 -4153.298)"/>
-            <path id="Path_76" d="M608.794 463.92l-2.184 6.061 8.853-5.942" className="cls-1"
-                  transform="translate(56.798 -4175.913)"/>
-            <path id="Line_18" d="M0 0L13.277 0" className="cls-1" transform="translate(660.309 -3723.813)"/>
-            <path id="Line_19" d="M0 0L13.277 0" className="cls-1" transform="translate(660.309 -3719.388)"/>
-        </g>
+    <svg
+        id="Layer_1"
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 432 432"
+    >
+        <path class="cls-1" d="M361,216A154.12,154.12,0,1,1,330,123.34" />
+        <polyline
+            class="cls-1"
+            points="144.88 74.85 183.4 135.38 231.83 135.38 263.74 75.95"
+        />
+        <line class="cls-1" x1="183.4" y1="135.38" x2="152.59" y2="359.89" />
+        <line class="cls-1" x1="231.83" y1="135.38" x2="270.34" y2="353.28" />
+        <path
+            class="cls-1"
+            d="M316.66,212.66l-41.37.86a13.79,13.79,0,0,1-13.75-13.75V135.92a13.79,13.79,0,0,1,13.75-13.75h90.26a13.79,13.79,0,0,1,13.75,13.75v63.85a13.79,13.79,0,0,1-13.75,13.75l-22.25-.21"
+        />
+        <polyline
+            class="cls-1"
+            points="310.81 212.66 299.11 245.15 346.55 213.31"
+        />
+        <line class="cls-1" x1="282.49" y1="149.31" x2="353.66" y2="149.31" />
+        <line class="cls-1" x1="282.49" y1="173.04" x2="353.66" y2="173.04" />
     </svg>
-)
+);
 
-
-export default ContentCreatingIcon
+export default ContentCreatingIcon;

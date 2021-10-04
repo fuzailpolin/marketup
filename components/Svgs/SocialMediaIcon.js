@@ -1,29 +1,42 @@
 const SocialMediaIcon = () => {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65.521 65.525">
-
-            <g id="Group_1359" transform="translate(0.766 0.802)">
-                <path id="Path_44" d="M159.527 44.256a31.984 31.984 0 1 1-12.316-11.511" className="cls-1"
-                      transform="translate(-100.317 -29.054)"/>
-                <circle id="Ellipse_34" cx="7.371" cy="7.371" r="7.371" className="cls-1"
-                        transform="translate(16.886 15.44)"/>
-                <path id="Path_45"
-                      d="M146.061 112.334a3.859 3.859 0 0 0 3.836-4.407c-1.371-8.842-6.767-15.447-13.22-15.447s-11.849 6.605-13.22 15.447a3.859 3.859 0 0 0 3.836 4.407z"
-                      className="cls-1" transform="translate(-112.424 -62.297)"/>
-                <circle id="Ellipse_35" cx="5.801" cy="5.801" r="5.801" className="cls-1"
-                        transform="translate(35.573 19.129)"/>
-                <path id="Path_46"
-                      d="M174.753 109.248h11.193a3.036 3.036 0 0 0 3.017-3.469c-1.075-6.962-5.325-12.159-10.4-12.159-3.131 0-5.948 1.98-7.9 5.13"
-                      className="cls-1" transform="translate(-137.185 -62.895)"/>
-                <path id="Path_47" d="M182.921 47.694H166.28V36.52h32.341v11.174h-9.042" className="cls-1"
-                      transform="translate(-134.89 -32.967)"/>
-                <path id="Path_48" d="M198.25 59l2.855 7.371 6.42-7.133" className="cls-1"
-                      transform="translate(-151.646 -44.75)"/>
-                <path id="Line_3" fill="none"  strokeDasharray="12" strokeMiterlimit="10"
-                      strokeWidth="1.5px" d="M0 0L24.727 0" transform="translate(35.43 9.021)"/>
-            </g>
+        <svg
+            id="Layer_1"
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 432 432"
+        >
+            <path
+                class="cls-1"
+                d="M344.4,136.73a150.73,150.73,0,1,1-58-54.23"
+            />
+            <circle class="cls-1" cx="179.69" cy="172.6" r="34.73" />
+            <path
+                class="cls-1"
+                d="M223.91,300.89A18.17,18.17,0,0,0,242,280.12c-6.45-41.67-31.89-72.79-62.29-72.79s-55.84,31.12-62.29,72.79a18.18,18.18,0,0,0,18.08,20.77Z"
+            />
+            <circle class="cls-1" cx="260.35" cy="182.56" r="27.33" />
+            <path
+                class="cls-1"
+                d="M242.42,283.52h52.73a14.3,14.3,0,0,0,14.22-16.34c-5.07-32.8-25.09-57.28-49-57.28-14.76,0-28,9.32-37.23,24.17"
+            />
+            <polyline
+                class="cls-1"
+                points="291.72 134.51 213.31 134.51 213.31 81.85 365.69 81.85 365.69 134.51 323.1 134.51"
+            />
+            <polyline
+                class="cls-1"
+                points="285 132.26 298.44 167 328.7 133.38"
+            />
+            <line
+                class="cls-2"
+                x1="232.34"
+                y1="107.62"
+                x2="348.87"
+                y2="107.62"
+            />
         </svg>
-    )
-}
+    );
+};
 
-export default SocialMediaIcon
+export default SocialMediaIcon;

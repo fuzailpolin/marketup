@@ -14,12 +14,15 @@ import VehicularAdvertising from "../../../Svgs/VehicularAdvertising";
 import EventManagement from "../../../Svgs/EventManagement";
 import WallPainting from "../../../Svgs/WallPainting";
 import Painting from "../../../Svgs/Painting";
+import Videography2 from "../../../Svgs/Videography2";
+import Event2 from "../../../Svgs/Event2";
+import Design2 from "../../../Svgs/Design2";
 
 const services = [
   {
     key: 1,
     title: "Social Media Marketing",
-    text: "3.96 billion worldwide uses social media every day. We know how much exposure is needed to accomplish",
+    text: "3.96 billion worldwide uses social media every day. We know how much exposure is needed to accomplish.",
     children: <SocialMediaIcon />,
   },
   {
@@ -31,7 +34,7 @@ const services = [
   {
     key: 3,
     title: "Design Solution",
-    children: <DesignSolutionIcon />,
+    children: <Design2 />,
     text: "Dedicated designers to analyze your industry and ensure the perfect designs to make your clients go WOW.",
   },
   {
@@ -42,7 +45,7 @@ const services = [
   },
   {
     key: 5,
-    text: "Look good, sell good.With our in house photography team, we will be sure to cover all angles",
+    text: "Look good, sell good.With our in house photography team, we will be sure to cover all angles.",
     title: "Photography",
     children: <PhotographyIcon />,
   },
@@ -74,7 +77,7 @@ const services = [
   {
     key: 10,
     title: "Videography",
-    children: <VideographyIcon />,
+    children: <Videography2 />,
     text: "We make premium videos for your premium audience so you stand out from the crowd.",
   },
   {
@@ -86,7 +89,7 @@ const services = [
   {
     key: 12,
     title: "Event Management",
-    children: <EventManagement />,
+    children: <Event2 />,
     text: "Worried about executing an event? Let the crows know your theme and see the idea into reality.",
   },
   {

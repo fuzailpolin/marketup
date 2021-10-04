@@ -1,25 +1,45 @@
 const PhotographyIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58.073 58.073">
-
-        <g id="Group_115" transform="translate(-221.45 3923.42)">
-            <circle id="Ellipse_36" cx="28.286" cy="28.286" r="28.286" className="cls-1"
-                    transform="translate(222.2 -3922.67)"/>
-            <rect id="Rectangle_59" width="40.105" height="29.707" className="cls-1" rx="14.854"
-                  transform="translate(230.432 -3909.237)"/>
-            <circle id="Ellipse_39" cx="10.397" cy="10.397" r="10.397" className="cls-1"
-                    transform="translate(236.078 -3904.89)"/>
-            <circle id="Ellipse_40" cx="5.991" cy="5.991" r="5.991" className="cls-1"
-                    transform="translate(240.455 -3900.484)"/>
-            <rect id="Rectangle_60" width="8.32" height="6.538" className="cls-1" rx="3.269"
-                  transform="translate(261.876 -3901.354)"/>
-            <path id="Rectangle_61" d="M0 0H11.759V4.41H0z" className="cls-1" transform="translate(245.311 -3879.269)"/>
-            <path id="Rectangle_62" d="M0 0H4.482V6.958H0z" className="cls-1"
-                  transform="matrix(0.972, -0.234, 0.234, 0.972, 252.719, -3873.823)"/>
-            <path id="Rectangle_63" d="M0 0H4.482V6.958H0z" className="cls-1"
-                  transform="matrix(-0.972, -0.234, 0.234, -0.972, 248.249, -3867.048)"/>
-        </g>
+    <svg
+        id="Layer_1"
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 432 432"
+    >
+        <path
+            class="cls-1"
+            d="M216,65.12a150.9,150.9,0,0,0-38.66,296.75,149.29,149.29,0,0,0,31.43,4.83L219.27,323l-11.78-2.83H188.4V296.61h62.72v23.52H231.74l-11.36,2.73,10.4,43.3A150.88,150.88,0,0,0,216,65.12Z"
+        />
+        <path
+            class="cls-1"
+            d="M251.12,296.61v23.52H231.74l-11.36,2.73,10.4,43.3q-7.29.72-14.78.72c-2.42,0-4.84-.06-7.23-.18L219.27,323l-11.78-2.83H188.4V296.61Z"
+        />
+        <rect
+            class="cls-1"
+            x="109.04"
+            y="136.77"
+            width="213.91"
+            height="158.45"
+            rx="18.02"
+        />
+        <circle class="cls-1" cx="194.62" cy="215.4" r="55.46" />
+        <circle class="cls-1" cx="194.45" cy="215.4" r="31.96" />
+        <rect
+            class="cls-1"
+            x="276.75"
+            y="178.81"
+            width="44.37"
+            height="34.86"
+            rx="7.77"
+        />
+        <polyline
+            class="cls-1"
+            points="250.12 315.48 251.35 315.18 261.97 359.42"
+        />
+        <path
+            class="cls-1"
+            d="M219.27,323l-10.5,43.74a149.29,149.29,0,0,1-31.43-4.83l11.06-46.06v4.32h19.09Z"
+        />
     </svg>
-)
+);
 
-
-export default PhotographyIcon
+export default PhotographyIcon;

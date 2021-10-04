@@ -18,11 +18,11 @@ const LogoSlider = ({logos}) => {
     const settings = {
         dots: false,
         infinite: true,
-        speed: 2000,
+        speed: 5000,
         slidesToShow: 5,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 1200,
+        autoplaySpeed: 800,
         arrows: false,
         responsive: [
             {
@@ -49,7 +49,7 @@ const LogoSlider = ({logos}) => {
                 logos.map((item, index)=>{
                     return (
                         <div key={index} className={'px-3'}>
-                            <Image className={'w-52 h-16 object-fill'} cloudName={cloudinaryCloudName} publicId={item}>
+                            <Image className={' w-52 h-16 object-fill'} cloudName={cloudinaryCloudName} publicId={item}>
                                 <Transformation width={200}  gravity="south" crop="fill" />
                             </Image>
                         </div>

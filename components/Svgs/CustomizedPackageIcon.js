@@ -1,20 +1,33 @@
 const CustomizedPackageIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 59.588 59.588">
-      <g id="Group_114" transform="translate(-334.7 3577.45)">
-            <circle id="Ellipse_37" cx="29.044" cy="29.044" r="29.044" className="cls-1"
-                    transform="translate(335.45 -3576.7)"/>
-            <path id="Line_24" d="M0 0L36.486 0" className="cls-2" transform="translate(346.251 -3556.708)"/>
-            <path id="Line_25" d="M0 0L36.486 0" className="cls-2" transform="translate(346.251 -3547.656)"/>
-            <path id="Line_26" d="M0 0L36.486 0" className="cls-2" transform="translate(346.251 -3538.608)"/>
-            <circle id="Ellipse_42" cx="1.869" cy="1.869" r="1.869" className="cls-1"
-                    transform="translate(352.005 -3558.612)"/>
-            <circle id="Ellipse_43" cx="1.869" cy="1.869" r="1.869" className="cls-1"
-                    transform="translate(362.348 -3549.417)"/>
-            <circle id="Ellipse_44" cx="1.869" cy="1.869" r="1.869" className="cls-1"
-                    transform="translate(374.993 -3540.801)"/>
-        </g>
+    <svg
+        id="Layer_1"
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 432 432"
+    >
+        <path
+            class="cls-1"
+            d="M210.35,74.86A155.14,155.14,0,1,0,365.49,230,155.14,155.14,0,0,0,210.35,74.86Zm-46.74,106.8a10,10,0,0,1-20,0v-.18a10,10,0,1,1,20,0Zm45.27,58.9a10,10,0,0,1-10-10c0-.2,0-.39,0-.58a10,10,0,0,1,19.91,0c0,.19,0,.38,0,.58A10,10,0,0,1,208.88,240.56Zm77.34,37.78a10,10,0,0,1-19.65,0,9.74,9.74,0,0,1-.15-1.72,10,10,0,1,1,19.95,0A9.74,9.74,0,0,1,286.22,278.34Z"
+        />
+        <line class="cls-2" x1="307.79" y1="181.66" x2="163.61" y2="181.66" />
+        <line class="cls-2" x1="143.66" y1="181.66" x2="112.91" y2="181.66" />
+        <line class="cls-2" x1="307.79" y1="230" x2="218.83" y2="230" />
+        <line class="cls-2" x1="198.92" y1="230" x2="112.91" y2="230" />
+        <line class="cls-2" x1="307.79" y1="278.34" x2="286.22" y2="278.34" />
+        <line class="cls-2" x1="266.57" y1="278.34" x2="112.91" y2="278.34" />
+        <path
+            class="cls-1"
+            d="M163.61,181.48v.18a10,10,0,0,1-20,0v-.18a10,10,0,1,1,20,0Z"
+        />
+        <path
+            class="cls-1"
+            d="M218.85,230.58a10,10,0,1,1-19.95,0c0-.2,0-.39,0-.58a10,10,0,0,1,19.91,0C218.84,230.19,218.85,230.38,218.85,230.58Z"
+        />
+        <path
+            class="cls-1"
+            d="M286.37,276.62a9.74,9.74,0,0,1-.15,1.72,10,10,0,0,1-19.65,0,9.74,9.74,0,0,1-.15-1.72,10,10,0,1,1,19.95,0Z"
+        />
     </svg>
-)
+);
 
-
-export default CustomizedPackageIcon
+export default CustomizedPackageIcon;
