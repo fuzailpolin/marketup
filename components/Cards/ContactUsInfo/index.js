@@ -12,7 +12,7 @@ const ContactUsInfo = () => {
                     <div className={'text-gray-300 font-poppins text-xs md:text-base'} >
                         <p>21/A Purana Paltan</p>
                         <p>1st Floor</p>
-                        <p>Dhaka - 1000</p>
+                        <p>Dhaka - 1205</p>
                     </div>
                 </div>
             </div>
@@ -22,8 +22,8 @@ const ContactUsInfo = () => {
                 </div>
                 <div className={'col-span-9 lg:col-span-10 flex items-center'}>
                     <div className={'text-gray-300 font-poppins text-xs md:text-base'}>
-                        <p>+88 01535353535</p>
-                        <p>+88 01616161655</p>
+                        <a href="tel:+8801535353535"><p>+88 01535353535</p></a>
+                        <a href="tel:+8801616161655"><p>+88 01616161655</p></a>
                     </div>
                 </div>
             </div>
