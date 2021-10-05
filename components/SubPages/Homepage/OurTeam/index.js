@@ -31,9 +31,10 @@ const OurTeam = () => {
                     <div className={'col-span-0 md:col-span-3 lg:col-span-4'}></div>
                     <div className={'col-span-12 md:col-span-6 lg:col-span-4 mx-5'}>
                         {
-                            team?.map((item)=>{
+                            team?.map((item, key)=>{
                                 if(item.designation.toUpperCase() === 'CEO' || item.designation.toUpperCase() === 'CHIEF EXECUTIVE OFFICER'){
                                     return (<TeamCard 
+                                        key = {key}
                                         name={item.name}
                                         designation={item.designation}
                                         image={item.image}

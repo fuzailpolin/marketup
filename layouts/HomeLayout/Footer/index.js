@@ -75,7 +75,7 @@ const Footer = () => {
                         <div className={'flex items-center py-4 md:py-10 md:hidden '}>
                             <div>
                                 <p className={'text-xs font-medium font-poppins text-white'}><span
-                                    className={'pr-1 text-base'}>&copy;</span> 2021 MarketUp Group Communications</p>
+                                    className={'pr-1 text-base'}>&copy;</span> 2021 marketUP. Group Communications</p>
                                 <p className={'text-xs font-poppins py-1 text-white'}><span
                                     className={'pr-1 text-base opacity-0'}>&copy;</span> All Rights Reserved</p>
                             </div>
